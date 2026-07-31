@@ -1,0 +1,9 @@
+{
+  "category": "Automations and scheduled work",
+  "runtime": "Python",
+  "framework": "Playwright",
+  "serviceTypes": ["scheduled"],
+  "resources": ["sqlite","persistent-files"],
+  "secrets": [],
+  "relatedUseCases": ["host-web-scraper","deploy-scheduled-job"]
+}

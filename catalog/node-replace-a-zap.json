@@ -1,0 +1,9 @@
+{
+  "category": "Automations and scheduled work",
+  "runtime": "Node.js",
+  "framework": "Express",
+  "serviceTypes": ["function","scheduled"],
+  "resources": ["postgresql","persistent-files"],
+  "secrets": [],
+  "relatedUseCases": ["replace-zapier-with-code","deploy-webhook","deploy-scheduled-job"]
+}

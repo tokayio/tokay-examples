@@ -1,0 +1,9 @@
+{
+  "category": "Bots, workers, and realtime apps",
+  "runtime": "Node.js",
+  "framework": "discord.js",
+  "serviceTypes": ["background"],
+  "resources": [],
+  "secrets": ["DISCORD_TOKEN"],
+  "relatedUseCases": ["host-discord-bot","deploy-background-worker"]
+}

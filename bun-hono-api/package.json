@@ -1,0 +1,16 @@
+{
+  "name": "tokay-bun-hono-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.ts"
+  },
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "packageManager": "bun@1.3.14",
+  "dependencies": {
+    "hono": "^4.10.6"
+  }
+}

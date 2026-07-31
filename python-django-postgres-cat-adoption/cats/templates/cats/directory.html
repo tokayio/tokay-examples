@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Good Room Cat Shelter</title>
+  <link rel="stylesheet" href="{% static 'cats/site.css' %}">
+</head>
+<body>
+  <header>
+    <a class="brand" href="/">Good Room</a>
+    <nav><a href="/rooms/sunroom/">Sunroom</a><a href="/rooms/library/">Library</a><a href="/rooms/garden/">Garden room</a><a href="/rooms/quiet/">Quiet room</a></nav>
+  </header>
+  <main>
+    <section class="intro">
+      <p class="kicker">{{ room_name }}</p>
+      <h1>Meet someone good.</h1>
+      <p>Every cat here has been observed with care. Read slowly, visit twice, and choose the relationship that fits both of you.</p>
+      <form method="get" action="/">
+        <label for="q">Search by name or temperament</label>
+        <div><input id="q" name="q" value="{{ query }}" placeholder="Try calm, playful, or Ada"><button>Search</button></div>
+      </form>
+    </section>
+    <section class="cats">
+      {% for cat in cats %}
+        <article>
+          <div class="portrait room-{{ cat.room }}" aria-hidden="true">{{ cat.initials }}</div>
+          <div class="card-head"><h2>{{ cat.name }}</h2><span>{{ cat.age }} yr</span></div>
+          <p class="temperament">{{ cat.temperament }}</p>
+          <p>{{ cat.note }}</p>
+          <footer><span>{{ cat.get_room_display }}</span><strong class="{{ cat.status }}">{{ cat.get_status_display }}</strong></footer>
+        </article>
+      {% empty %}
+        <p class="empty">No cats match that search yet. Try a room or a gentler word.</p>
+      {% endfor %}
+    </section>
+  </main>
+</body>
+</html>

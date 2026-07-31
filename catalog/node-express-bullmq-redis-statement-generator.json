@@ -1,0 +1,9 @@
+{
+  "category": "Bots, workers, and realtime apps",
+  "runtime": "Node.js",
+  "framework": "Express and BullMQ",
+  "serviceTypes": ["web","background"],
+  "resources": ["redis"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-queue-worker","deploy-background-worker"]
+}

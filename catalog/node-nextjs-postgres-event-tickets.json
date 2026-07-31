@@ -1,0 +1,9 @@
+{
+  "category": "Websites, apps, and APIs",
+  "runtime": "Node.js",
+  "framework": "Next.js",
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-nextjs"]
+}

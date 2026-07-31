@@ -1,0 +1,9 @@
+{
+  "category": "Persistent VM apps",
+  "runtime": "Node.js",
+  "framework": "Express and Prisma",
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-database-migrations-safely"]
+}

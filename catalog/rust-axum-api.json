@@ -1,0 +1,9 @@
+{
+  "category": "Start with your language",
+  "runtime": "Rust",
+  "framework": "Axum",
+  "serviceTypes": ["web"],
+  "resources": [],
+  "secrets": [],
+  "relatedUseCases": ["deploy-rust-axum","deploy-webapp"]
+}

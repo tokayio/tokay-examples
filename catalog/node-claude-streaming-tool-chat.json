@@ -1,0 +1,10 @@
+{
+  "category": "AI apps and integrations",
+  "runtime": "Node.js",
+  "framework": "Express",
+  "serviceTypes": ["web"],
+  "resources": [],
+  "secrets": ["ANTHROPIC_API_KEY"],
+  "relatedUseCases": [],
+  "relatedUseCaseException": "No published guide focuses on a hosted AI chat."
+}
