@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="960" viewBox="0 0 720 960">
+  <metadata>Original sample artwork dedicated to CC0 1.0 Universal</metadata>
+  <rect width="720" height="960" fill="#cbd4d2"/>
+  <g transform="rotate(1.5 360 480)">
+    <rect x="128" y="85" width="464" height="790" rx="10" fill="#f8fbf7" stroke="#7c918b" stroke-width="3"/>
+    <circle cx="360" cy="170" r="54" fill="#31594d"/>
+    <path d="M328 170h64M360 138v64" stroke="#f8fbf7" stroke-width="13"/>
+    <text x="360" y="265" text-anchor="middle" font-family="sans-serif" font-size="31" font-weight="700" fill="#253f37">NORTH CITY TRANSIT</text>
+    <g font-family="monospace" font-size="22" fill="#34443f">
+      <text x="180" y="365">WEEKLY PASS</text><text x="540" y="365" text-anchor="end">32.00</text>
+      <text x="180" y="425">ZONE</text><text x="540" y="425" text-anchor="end">CENTRAL</text>
+      <text x="180" y="485">METHOD</text><text x="540" y="485" text-anchor="end">CARD</text>
+    </g>
+    <path d="M175 555h370" stroke="#8ca099" stroke-width="2" stroke-dasharray="7 8"/>
+    <text x="180" y="635" font-family="monospace" font-size="25" fill="#34443f">TOTAL</text>
+    <text x="540" y="635" text-anchor="end" font-family="monospace" font-size="34" font-weight="700" fill="#253f37">$32.00</text>
+    <g fill="#253f37"><rect x="205" y="735" width="7" height="70"/><rect x="225" y="735" width="3" height="70"/><rect x="238" y="735" width="11" height="70"/><rect x="264" y="735" width="4" height="70"/><rect x="280" y="735" width="9" height="70"/><rect x="306" y="735" width="3" height="70"/><rect x="321" y="735" width="13" height="70"/><rect x="348" y="735" width="6" height="70"/><rect x="370" y="735" width="3" height="70"/><rect x="386" y="735" width="12" height="70"/><rect x="414" y="735" width="5" height="70"/><rect x="435" y="735" width="10" height="70"/><rect x="461" y="735" width="4" height="70"/><rect x="478" y="735" width="12" height="70"/><rect x="510" y="735" width="5" height="70"/></g>
+  </g>
+</svg>

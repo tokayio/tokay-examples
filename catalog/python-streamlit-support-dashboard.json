@@ -1,0 +1,9 @@
+{
+  "category": "Coworker and mixed access apps",
+  "runtime": "Python",
+  "framework": "Streamlit",
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": [],
+  "relatedUseCases": ["host-internal-tool"]
+}

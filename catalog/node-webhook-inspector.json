@@ -1,0 +1,9 @@
+{
+  "category": "Automations and scheduled work",
+  "runtime": "Node.js",
+  "framework": "Express",
+  "serviceTypes": ["function"],
+  "resources": [],
+  "secrets": [],
+  "relatedUseCases": ["deploy-webhook"]
+}

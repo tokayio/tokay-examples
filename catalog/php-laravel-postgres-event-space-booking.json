@@ -1,0 +1,9 @@
+{
+  "category": "Websites, apps, and APIs",
+  "runtime": "PHP",
+  "framework": "Laravel",
+  "serviceTypes": ["web","scheduled"],
+  "resources": ["postgresql"],
+  "secrets": ["APP_KEY"],
+  "relatedUseCases": ["deploy-laravel","deploy-scheduled-job"]
+}

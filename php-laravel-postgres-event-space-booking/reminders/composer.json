@@ -1,0 +1,19 @@
+{
+  "name": "tokay/event-space-reminders",
+  "type": "project",
+  "description": "The scheduled reminder command for the event space example",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "illuminate/console": "^13.8",
+    "illuminate/database": "^13.8",
+    "ramsey/uuid": "^4.9",
+    "symfony/mailer": "^8.0",
+    "symfony/mime": "^8.0"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  }
+}

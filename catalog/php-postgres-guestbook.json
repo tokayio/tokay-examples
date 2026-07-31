@@ -1,0 +1,9 @@
+{
+  "category": "Start with your language",
+  "runtime": "PHP",
+  "framework": null,
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-app-with-postgres"]
+}

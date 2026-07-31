@@ -1,0 +1,9 @@
+{
+  "category": "Websites, apps, and APIs",
+  "runtime": "Node.js",
+  "framework": "Express",
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-app-with-postgres"]
+}

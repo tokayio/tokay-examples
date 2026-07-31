@@ -1,0 +1,9 @@
+{
+  "category": "Bots, workers, and realtime apps",
+  "runtime": "Node.js",
+  "framework": "Slack Bolt",
+  "serviceTypes": ["background"],
+  "resources": [],
+  "secrets": ["SLACK_BOT_TOKEN","SLACK_APP_TOKEN"],
+  "relatedUseCases": ["host-slack-bot","deploy-background-worker"]
+}

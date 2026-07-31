@@ -1,0 +1,85 @@
+# Node Claude streaming chat
+
+A Claude chat page streams answers from `claude-sonnet-4-6`, preserves context for follow up questions, and renders model Markdown safely. Tokay runs the Node.js app as one Web Service with your Anthropic key stored as a Secret.
+
+Use this project to follow Anthropic's Messages API from a browser conversation through the SDK stream and back. The interface stays useful while the private credential never reaches client code.
+
+## Guide and download
+
+Read the full guide at
+https://tokay.io/examples/node-claude-streaming-tool-chat. You can also download the
+complete project at
+https://tokay.io/examples/downloads/node-claude-streaming-tool-chat.zip.
+
+## What it does
+
+The composer begins with a trip planning question that you can send as written or replace.
+
+Claude's text appears while it is generated, then remains in the thread for your next question. Markdown lists, tables, links, and code become safe page content.
+
+The response footer records elapsed time and token use. Press **New chat** to clear the conversation and begin without earlier context.
+
+## Deploy with your agent
+
+The fastest path is MCP. Connect your client to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
+when your browser opens, then ask the agent to deploy this folder. There is
+no token to paste.
+
+No MCP support? Use an API token instead.
+
+Your agent needs a Tokay API token to create the deployment. The running app separately needs your Anthropic key.
+
+If your agent already has a Tokay API token, start at step 3.
+
+1. In Tokay, open **Account**, then **API**, and choose **New Token**.
+2. Save the Tokay token in the agent's secret store.
+3. Give your agent this folder or its GitHub URL.
+4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask the agent to deploy the chat and stop if `ANTHROPIC_API_KEY` is not available.
+
+If you want the agent to finish the setup, save your Anthropic key in its secret store and ask it to store `ANTHROPIC_API_KEY` as a shared Project Secret. Otherwise, add the key yourself using the steps below. Never put the key in this folder.
+
+## Paste or upload
+
+1. Open Tokay and choose **Add code**, then **Paste or upload**.
+2. Upload this whole folder and choose **Analyze**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+4. Tokay opens the new Service page. Add your Anthropic key using the steps below.
+
+## Push with Git
+
+1. Open Tokay and choose **Add code**, then **Push with Git**.
+2. Create a repository and follow the Git setup commands shown by Tokay.
+3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+4. Tokay opens the new Service page. Add your Anthropic key using the steps below.
+
+## Add your Anthropic API key
+
+Create a key in the [Anthropic Console](https://console.anthropic.com/settings/keys). On the Service page, open **Environment** and find `ANTHROPIC_API_KEY` under **From your code**. Choose **Set shared value**, leave it marked **Secret**, and save the Anthropic key.
+
+After the Anthropic key reaches **Good to go**, complete the deployment tracker. Use **Go Live** if shown, then open Claude from the Service URL.
+
+## Try it
+
+1. Send the provided question and watch Claude answer before the request finishes.
+2. Refer to one place from the response and ask for a different recommendation.
+3. Clear the chat and repeat that request. Claude now asks for the context it no longer has.
+
+## How it works
+
+You can continue the thread because the browser sends its messages again on each turn. The server streams Claude's text deltas over SSE, then reads the SDK's final accumulated message for the authoritative usage and stop reason.
+
+The demo reserves output space and lets Anthropic enforce Claude's context limit. If the model reaches that boundary, the page tells you to begin a new chat.
+
+Marked handles the Markdown syntax and DOMPurify removes unsafe HTML. Neither the key nor the conversation is stored as application data.
+
+## Secrets
+
+| Name | Visibility | Required | Purpose |
+|---|---|---|---|
+| `ANTHROPIC_API_KEY` | Secret | Yes | Authenticates requests to Anthropic. |
+
+## Grow from here
+
+Try the [AI research queue](../python-fastapi-postgres-ai-research-queue) when Claude should synthesize evidence outside a browser request.
