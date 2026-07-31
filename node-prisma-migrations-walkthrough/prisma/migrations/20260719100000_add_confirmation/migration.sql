@@ -1,0 +1,1 @@
+ALTER TABLE "Signup" ADD COLUMN "confirmedAt" TIMESTAMPTZ(3);
