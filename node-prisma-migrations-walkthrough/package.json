@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "tsx src/server.ts",
-    "postinstall": "prisma generate",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
