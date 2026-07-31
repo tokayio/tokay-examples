@@ -1,0 +1,18 @@
+CREATE TABLE "Signup" (
+  "id" UUID NOT NULL DEFAULT gen_random_uuid(),
+  "name" VARCHAR(100) NOT NULL,
+  "email" VARCHAR(254) NOT NULL,
+  "createdAt" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT "Signup_pkey" PRIMARY KEY ("id")
+);
+
+CREATE TABLE "PageVisit" (
+  "id" BIGSERIAL NOT NULL,
+  "path" VARCHAR(200) NOT NULL,
+  "visitedAt" TIMESTAMPTZ(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT "PageVisit_pkey" PRIMARY KEY ("id")
+);
+
+CREATE UNIQUE INDEX "Signup_email_key" ON "Signup"("email");

@@ -1,0 +1,9 @@
+{
+  "category": "Automations and scheduled work",
+  "runtime": "Python",
+  "framework": null,
+  "serviceTypes": ["scheduled"],
+  "resources": ["sqlite"],
+  "secrets": [],
+  "relatedUseCases": ["run-python-script-every-day","deploy-scheduled-job"]
+}

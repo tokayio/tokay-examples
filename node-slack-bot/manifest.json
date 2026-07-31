@@ -1,0 +1,51 @@
+{
+  "_metadata": {
+    "major_version": 2
+  },
+  "display_information": {
+    "name": "Standup Pocket",
+    "description": "A small standup helper that stays connected through Socket Mode",
+    "background_color": "#31594d"
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "Standup Pocket",
+      "always_online": true
+    },
+    "slash_commands": [
+      {
+        "command": "/standup",
+        "description": "Post one concise standup update",
+        "usage_hint": "Shipped the export flow and reviewing logs next",
+        "should_escape": false
+      },
+      {
+        "command": "/botuptime",
+        "description": "Show how long the bot has stayed connected",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "app_mentions:read",
+        "chat:write",
+        "commands"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_mention"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": true
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}

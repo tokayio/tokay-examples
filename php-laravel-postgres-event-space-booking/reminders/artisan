@@ -1,0 +1,115 @@
+#!/usr/bin/env php
+<?php
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mime\Email;
+
+require __DIR__.'/vendor/autoload.php';
+
+$appKey = trim((string) getenv('APP_KEY'));
+if ($appKey === '') {
+    fwrite(STDERR, "APP_KEY is required. Store the same Project Secret used by the Web Service.\n");
+    exit(1);
+}
+
+$databaseUrl = parse_url((string) getenv('DATABASE_URL'));
+if (!$databaseUrl || empty($databaseUrl['host']) || empty($databaseUrl['path'])) {
+    fwrite(STDERR, "DATABASE_URL is required.\n");
+    exit(1);
+}
+
+$capsule = new Capsule();
+$capsule->addConnection([
+    'driver' => 'pgsql',
+    'host' => $databaseUrl['host'],
+    'port' => $databaseUrl['port'] ?? 5432,
+    'database' => ltrim($databaseUrl['path'], '/'),
+    'username' => urldecode($databaseUrl['user'] ?? ''),
+    'password' => urldecode($databaseUrl['pass'] ?? ''),
+    'charset' => 'utf8',
+    'prefix' => '',
+]);
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+
+$application = new Application('Laravel reminder console', '13');
+$application->addCommand(new class extends Command {
+    protected function configure(): void
+    {
+        $this
+            ->setName('reminders:send')
+            ->setDescription('Write reminders for bookings that begin in the next 24 hours');
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $now = Carbon::now();
+        $bookings = Capsule::table('bookings')
+            ->join('rooms', 'rooms.id', '=', 'bookings.room_id')
+            ->leftJoin('notifications', function ($join): void {
+                $join->on('notifications.booking_id', '=', 'bookings.id')
+                    ->where('notifications.kind', '=', '24 hour reminder');
+            })
+            ->whereNull('notifications.id')
+            ->where('bookings.starts_at', '>=', $now)
+            ->where('bookings.starts_at', '<', $now->copy()->addDay())
+            ->select('bookings.*', 'rooms.name as room_name')
+            ->orderBy('bookings.starts_at')
+            ->get();
+
+        $smtpHost = trim((string) getenv('SMTP_HOST'));
+        $smtpPort = (int) (getenv('SMTP_PORT') ?: 587);
+        $smtpUsername = trim((string) getenv('SMTP_USERNAME'));
+        $smtpPassword = trim((string) getenv('SMTP_PASSWORD'));
+        $from = trim((string) (getenv('SMTP_FROM') ?: 'bookings@example.test'));
+        $mailer = null;
+        if ($smtpHost !== '') {
+            $credentials = $smtpUsername !== '' ? rawurlencode($smtpUsername).':'.rawurlencode($smtpPassword).'@' : '';
+            $mailer = new Mailer(Transport::fromDsn("smtp://{$credentials}{$smtpHost}:{$smtpPort}"));
+        }
+
+        foreach ($bookings as $booking) {
+            $delivery = 'log';
+            if ($mailer) {
+                $mailer->send(
+                    (new Email())
+                        ->from($from)
+                        ->to($booking->email)
+                        ->subject('Your room booking is tomorrow')
+                        ->text("Hello {$booking->name},\n\nYour booking for {$booking->room_name} begins at {$booking->starts_at}.\n")
+                );
+                $delivery = 'smtp';
+            }
+            Capsule::table('notifications')->insert([
+                'id' => (string) Str::uuid(),
+                'booking_id' => $booking->id,
+                'kind' => '24 hour reminder',
+                'sent_at' => Carbon::now(),
+                'delivery' => $delivery,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+            $output->writeln(json_encode([
+                'booking' => $booking->id,
+                'room' => $booking->room_name,
+                'starts_at' => $booking->starts_at,
+                'delivery' => $delivery,
+            ], JSON_UNESCAPED_SLASHES));
+        }
+        $output->writeln("<info>Reminder pass complete. {$bookings->count()} booking(s) handled.</info>");
+        return self::SUCCESS;
+    }
+});
+
+// Tokay invokes the scheduled entry point directly. Local runs can still name the command.
+$application->setDefaultCommand('reminders:send');
+
+exit($application->run());

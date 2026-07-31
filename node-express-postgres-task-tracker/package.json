@@ -1,0 +1,17 @@
+{
+  "name": "food-truck-launch-board",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "migrate": "graphile-migrate migrate"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "graphile-migrate": "^1.4.1",
+    "pg": "^8.22.0"
+  }
+}

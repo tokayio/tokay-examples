@@ -1,0 +1,9 @@
+{
+  "category": "Websites, apps, and APIs",
+  "runtime": "Node.js",
+  "framework": "React, Vite, and Express",
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-react-app-with-backend","deploy-webapp"]
+}

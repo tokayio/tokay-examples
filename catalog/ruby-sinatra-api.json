@@ -1,0 +1,9 @@
+{
+  "category": "Start with your language",
+  "runtime": "Ruby",
+  "framework": "Sinatra",
+  "serviceTypes": ["web"],
+  "resources": [],
+  "secrets": [],
+  "relatedUseCases": ["deploy-webapp"]
+}
