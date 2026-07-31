@@ -1,0 +1,9 @@
+{
+  "category": "Start with your language",
+  "runtime": "Node.js",
+  "framework": "Express",
+  "serviceTypes": ["web"],
+  "resources": [],
+  "secrets": [],
+  "relatedUseCases": ["deploy-express","deploy-webapp"]
+}

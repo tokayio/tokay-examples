@@ -1,0 +1,9 @@
+{
+  "category": "Persistent VM apps",
+  "runtime": "Python",
+  "framework": "FastAPI and WeasyPrint",
+  "serviceTypes": ["web"],
+  "resources": ["sqlite","persistent-files"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-app-with-sqlite"]
+}

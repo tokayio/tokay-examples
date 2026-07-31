@@ -1,0 +1,15 @@
+{
+  "name": "statement-generator-web",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": ">=24" },
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "archiver": "8.0.0",
+    "bullmq": "5.80.9",
+    "csv-parse": "7.0.1",
+    "express": "5.2.1",
+    "ioredis": "5.11.1",
+    "multer": "2.2.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "category": "Start with your language",
+  "runtime": "Node.js",
+  "framework": "Express",
+  "serviceTypes": ["web"],
+  "resources": ["sqlite"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-app-with-sqlite","deploy-webapp"]
+}

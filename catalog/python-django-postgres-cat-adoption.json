@@ -1,0 +1,9 @@
+{
+  "category": "Websites, apps, and APIs",
+  "runtime": "Python",
+  "framework": "Django",
+  "serviceTypes": ["web"],
+  "resources": ["postgresql"],
+  "secrets": ["SECRET_KEY"],
+  "relatedUseCases": ["deploy-django"]
+}

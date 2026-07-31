@@ -1,0 +1,9 @@
+{
+  "category": "AI apps and integrations",
+  "runtime": "Node.js",
+  "framework": "Express and MCP SDK",
+  "serviceTypes": ["web"],
+  "resources": ["sqlite"],
+  "secrets": [],
+  "relatedUseCases": ["deploy-mcp-server"]
+}

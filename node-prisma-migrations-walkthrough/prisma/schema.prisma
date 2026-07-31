@@ -1,0 +1,16 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Signup {
+  id          String    @id @default(uuid()) @db.Uuid
+  name        String    @db.VarChar(100)
+  email       String    @unique @db.VarChar(254)
+  createdAt   DateTime  @default(now()) @db.Timestamptz(3)
+  confirmedAt DateTime? @db.Timestamptz(3)
+}

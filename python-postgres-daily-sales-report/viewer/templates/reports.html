@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juniper Goods daily sales</title>
+  <link rel="stylesheet" href="/static/site.css">
+</head>
+<body>
+  <header><a href="/">Juniper Goods</a><span>Daily sales desk</span></header>
+  <main>
+    <section class="intro">
+      <p class="kicker">A clear morning number</p>
+      <h1>How did yesterday go?</h1>
+      <p>Each report comes from the orders in PostgreSQL. Open one before the day gets noisy.</p>
+    </section>
+    {% if report %}
+      <section class="report">
+        <div class="report-head"><div><p>Report for</p><h2>{{ report.report_date.strftime('%A, %B %-d') }}</h2></div><a href="/">All reports</a></div>
+        <div class="metrics">
+          <article><span>Revenue</span><strong>${{ '%.2f'|format(report.revenue_cents / 100) }}</strong></article>
+          <article><span>Orders</span><strong>{{ report.order_count }}</strong></article>
+          <article><span>Week change</span><strong>{% if report.week_change_percent is none %}New{% else %}{{ '%+.1f'|format(report.week_change_percent) }}%{% endif %}</strong></article>
+        </div>
+        <div class="top"><h3>What sold</h3>{% for item in report.top_items %}<div><span>{{ loop.index }}. {{ item.name }}</span><strong>${{ '%.2f'|format(item.revenue_cents / 100) }}</strong></div>{% endfor %}</div>
+        <p class="generated">Generated {{ report.generated_at.strftime('%b %-d at %-I:%M %p') }}</p>
+      </section>
+    {% else %}
+      <section class="empty"><h2>Your first report is one run away.</h2><p>Open the Daily Sales Generator Service and choose <strong>Run Now</strong>.</p></section>
+    {% endif %}
+    <section class="history">
+      <h2>Report history</h2>
+      {% for item in reports %}<a href="/reports/{{ item.report_date }}"><span>{{ item.report_date.strftime('%b %-d') }}</span><strong>${{ '%.2f'|format(item.revenue_cents / 100) }}</strong><small>{{ item.order_count }} orders</small></a>{% else %}<p>No reports yet.</p>{% endfor %}
+    </section>
+  </main>
+</body>
+</html>

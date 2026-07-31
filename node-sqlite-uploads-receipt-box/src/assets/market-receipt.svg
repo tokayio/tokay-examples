@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="960" viewBox="0 0 720 960">
+  <metadata>Original sample artwork dedicated to CC0 1.0 Universal</metadata>
+  <rect width="720" height="960" fill="#d8d1c4"/>
+  <g transform="rotate(-2 360 480)">
+    <rect x="145" y="70" width="430" height="820" rx="6" fill="#fffdf4" stroke="#b9ad99" stroke-width="3"/>
+    <text x="360" y="145" text-anchor="middle" font-family="serif" font-size="34" fill="#2b342c">GREEN BASKET</text>
+    <text x="360" y="184" text-anchor="middle" font-family="monospace" font-size="18" fill="#5d625d">NEIGHBORHOOD MARKET</text>
+    <path d="M190 225h340M190 698h340" stroke="#827b70" stroke-width="2" stroke-dasharray="8 7"/>
+    <g font-family="monospace" font-size="22" fill="#343834">
+      <text x="195" y="285">APPLES</text><text x="510" y="285" text-anchor="end">6.40</text>
+      <text x="195" y="335">BREAD</text><text x="510" y="335" text-anchor="end">5.25</text>
+      <text x="195" y="385">COFFEE</text><text x="510" y="385" text-anchor="end">14.00</text>
+      <text x="195" y="435">GREENS</text><text x="510" y="435" text-anchor="end">8.10</text>
+      <text x="195" y="485">OATS</text><text x="510" y="485" text-anchor="end">7.05</text>
+      <text x="195" y="760">TOTAL</text><text x="510" y="760" text-anchor="end">40.80</text>
+    </g>
+    <text x="360" y="835" text-anchor="middle" font-family="monospace" font-size="18" fill="#62675f">THANK YOU</text>
+  </g>
+</svg>

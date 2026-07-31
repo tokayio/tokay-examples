@@ -1,0 +1,9 @@
+{
+  "category": "Start with your language",
+  "runtime": "Go",
+  "framework": "net/http",
+  "serviceTypes": ["web"],
+  "resources": [],
+  "secrets": [],
+  "relatedUseCases": ["deploy-go","deploy-webapp"]
+}
