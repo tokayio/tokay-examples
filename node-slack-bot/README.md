@@ -36,20 +36,20 @@ Keep both tokens out of this folder and out of chat.
 
 The fastest path is MCP. Connect your client to the
 [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask the agent to deploy this folder. There is
+when your browser opens, then ask your agent to deploy this folder. There is
 no token to paste.
 
 No MCP support? Use an API token instead.
 
-If your agent already has a Tokay API token and both Slack tokens in its secret store, start at step 3.
+If your agent already has a Tokay API token and both Slack tokens in their secret store, start at step 3.
 
-1. In Tokay, open **Account**, then **API**, and choose **New Token**.
-2. Save the Tokay token, `SLACK_BOT_TOKEN`, and `SLACK_APP_TOKEN` in the agent's secret store.
-3. Give your agent this folder or its GitHub URL.
-4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask the agent to deploy the bot as a Background Worker, store both Slack tokens as shared Project Secrets, and confirm that the ready message appears in the logs.
+1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+2. Save the Tokay token, `SLACK_BOT_TOKEN`, and `SLACK_APP_TOKEN` in your agent's secret store.
+3. Give your agent this folder or the example's GitHub URL.
+4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask your agent to deploy the bot as a Background Worker, store both Slack tokens as shared Project Secrets, and confirm that the ready message appears in the logs.
 
-The Tokay token lets the agent deploy. The two Slack tokens let the running bot connect. Never put any of them in this folder.
+The Tokay token lets your agent deploy. The two Slack tokens let the running bot connect. Never put any of them in this folder.
 
 ## Paste or upload
 

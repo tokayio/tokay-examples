@@ -345,7 +345,7 @@ app.get("/", (request, response) => {
 
     <section>
       <h2>Connect Claude Code</h2>
-      <p>Add the remote MCP endpoint, then start the OAuth sign-in flow. Claude Code opens Tokay's consent page in your browser.</p>
+      <p>Add the remote MCP endpoint, then start the OAuth sign in flow. Claude Code opens Tokay's consent page in your browser.</p>
       <pre><code id="claude-add"></code></pre>
       <pre><code>claude mcp login task-inbox</code></pre>
     </section>

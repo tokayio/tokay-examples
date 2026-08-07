@@ -256,22 +256,22 @@ app.get("/", (_request, response) => {
   <main>
     <header>
       <h1>Private sales reports, ready for your agent.</h1>
-      <p>This remote MCP server gives a headless agent four read only tools over a seeded 90 day order history. A Tokay machine token protects the endpoint, and the SQLite database stays with your Service.</p>
+      <p>This remote MCP server gives a headless agent four read only tools over a seeded 90 day order history. A Tokay Machine credential protects the endpoint, and the SQLite database stays with your Service.</p>
       <div class="endpoint"><code id="endpoint"></code><button id="copy">Copy endpoint</button></div>
     </header>
 
     <section>
       <h2>Connect a headless agent</h2>
-      <p>Make the Project private under <strong>App audience</strong>, create a machine token, and pass it as a bearer header.</p>
+      <p>Make the Project private under <strong>App audience</strong>, create a Machine, issue a credential, and pass it as a bearer header.</p>
       <pre><code id="claude-private"></code></pre>
       <h3>Optional public smoke test</h3>
-      <p>Before restricting the Project, you can verify the MCP handshake without a token.</p>
+      <p>Before restricting the Project, you can verify the MCP handshake without a credential.</p>
       <pre><code id="claude-public"></code></pre>
     </section>
 
     <section>
       <h2>Check the public smoke test</h2>
-      <p>While the Project is public, list the tools with MCP Inspector. Then make it private and use the machine-token command above.</p>
+      <p>While the Project is public, list the tools with MCP Inspector. Then make it private and use the Machine credential command above.</p>
       <pre><code id="inspector"></code></pre>
     </section>
 
@@ -286,15 +286,15 @@ app.get("/", (_request, response) => {
     </section>
 
     <section>
-      <h2>Why a machine token?</h2>
-      <p class="note">This agent is automation, not a person. Its token carries a machine identity, works without an interactive sign-in, and can be revoked without changing anyone's account. Use per-person OAuth when an individual is authorizing their own MCP client.</p>
+      <h2>Why a Machine?</h2>
+      <p class="note">This agent is automation, not a person. Its Machine provides a durable identity, and the credential works without an interactive sign in and can be revoked without changing anyone's account. Use per-person OAuth when an individual is authorizing their own MCP client.</p>
     </section>
   </main>
   <script>
     const endpoint = location.origin + '/mcp';
     document.querySelector('#endpoint').textContent = endpoint;
     document.querySelector('#claude-public').textContent = 'claude mcp add --transport http shop-orders ' + endpoint;
-    document.querySelector('#claude-private').textContent = 'claude mcp add --transport http shop-orders ' + endpoint + ' --header "Authorization: Bearer <machine-token>"';
+    document.querySelector('#claude-private').textContent = 'claude mcp add --transport http shop-orders ' + endpoint + ' --header "Authorization: Bearer <machine-credential>"';
     document.querySelector('#inspector').textContent = 'npx -y @modelcontextprotocol/inspector@latest --cli ' + endpoint + ' --transport http --method tools/list';
     document.querySelector('#copy').addEventListener('click', async event => {
       await navigator.clipboard.writeText(endpoint);
