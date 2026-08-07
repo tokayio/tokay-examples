@@ -41,18 +41,18 @@ Keep `tokay-examples-source` beside `prisma-walkthrough`. The later steps copy `
 
 The fastest path is MCP. Connect your client to the
 [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask the agent to deploy this folder. There is
+when your browser opens, then ask your agent to deploy this folder. There is
 no token to paste.
 
 No MCP support? Use an API token instead.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **API**, and choose **New Token**.
+1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this guide and the Tokay examples GitHub URL.
-4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask the agent to prepare the standalone repository above, deploy its `v1` commit with one Service, Project, and database, then wait while you add a signup. After that, have the agent apply the remaining versions as described below. Keep migration safety on Normal through `v2-additive`, change it to Strict before `v3-destructive`, and stop at `CONFIRM_RELEASE` to show you the rehearsal result.
+4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask your agent to prepare the standalone repository above, deploy its `v1` commit with one Service, Project, and database, then wait while you add a signup. After that, have your agent apply the remaining versions as described below. Keep migration safety on Normal through `v2-additive`, change it to Strict before `v3-destructive`, and stop at `CONFIRM_RELEASE` to show you the rehearsal result.
 
 Never put the Tokay API token in this repository or in the deployed app.
 
@@ -106,7 +106,7 @@ git push tokay main
 
 3. Choose **Review release** and inspect the populated `public.PageVisit` drop. Apply it with downtime, then reopen **Field Notes** and confirm your signup remains. In a production Project, the release also shows its restore point under **Database snapshots**.
 
-An agent sees the same stop as `ACTION_REQUIRED` with action `CONFIRM_RELEASE`. The agent must show you the rehearsal evidence and wait for your decision.
+Your agent sees the same stop as `ACTION_REQUIRED` with action `CONFIRM_RELEASE`. They must show you the rehearsal evidence and wait for your decision.
 
 ## What protects your data
 

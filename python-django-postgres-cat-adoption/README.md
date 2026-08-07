@@ -33,18 +33,18 @@ Keep the value ready for the setup step after Tokay creates the Service. Do not 
 
 The fastest path is MCP. Connect your client to the
 [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask the agent to deploy this folder. There is
+when your browser opens, then ask your agent to deploy this folder. There is
 no token to paste.
 
 No MCP support? Use an API token instead.
 
-If your agent already has a Tokay API token and `SECRET_KEY` in its secret store, start at step 3.
+If your agent already has a Tokay API token and `SECRET_KEY` in their secret store, start at step 3.
 
-1. In Tokay, open **Account**, then **API**, and choose **New Token**.
+1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store beside the `SECRET_KEY` you generated.
-3. Give your agent this folder or its GitHub URL.
-4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask the agent to deploy the directory, use the `SECRET_KEY`, confirm the suggested PostgreSQL database, and verify search.
+3. Give your agent this folder or the example's GitHub URL.
+4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask your agent to deploy the directory, use the `SECRET_KEY`, confirm the suggested PostgreSQL database, and verify search.
 
 Never put either secret in this folder or in the deployed source.
 

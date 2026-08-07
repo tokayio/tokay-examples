@@ -23,18 +23,18 @@ A second visitor uses the same endpoint but starts with an empty inbox. The app 
 
 The fastest path is MCP. Connect your client to the
 [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask the agent to deploy this folder. There is
+when your browser opens, then ask your agent to deploy this folder. There is
 no token to paste.
 
 No MCP support? Use an API token instead.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **API**, and choose **New Token**.
+1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
-3. Give your agent this folder or its GitHub URL.
-4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask the agent to deploy the app, restrict it to your email, connect to `/mcp` with OAuth, create a task, and prove a second visitor cannot see it.
+3. Give your agent this folder or the example's GitHub URL.
+4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask your agent to deploy the app, restrict it to your email, connect to `/mcp` with OAuth, create a task, and prove a second visitor cannot see it.
 
 The Tokay API token manages the deployment. It is not the OAuth token used by MCP visitors. Never put it in this folder.
 
@@ -89,7 +89,7 @@ If you add a second visitor, have them connect with their own email. Their list 
 
 You do not need to trust identity sent by the MCP tool call. Tokay's access layer publishes OAuth discovery, completes consent, validates the bearer token, removes it, and injects trusted identity headers only after authorization succeeds.
 
-The app requires a human actor on every `/mcp` request. Every task query includes `X-Tokay-Actor-Id` as its owner key. Machine tokens and anonymous calls are rejected because this inbox belongs to individual people.
+The app requires a human actor on every `/mcp` request. Every task query includes `X-Tokay-Actor-Id` as its owner key. Machine credentials and anonymous calls are rejected because this inbox belongs to individual people.
 
 ## Secrets
 
@@ -97,4 +97,4 @@ You have no OAuth secret to configure. Tokay owns authorization and passes verif
 
 ## Grow from here
 
-Use the [private sales analytics MCP server](../node-express-sqlite-mcp-orders) when a headless agent should connect with a machine token instead of a person's OAuth grant.
+Use the [private sales analytics MCP server](../node-express-sqlite-mcp-orders) when your headless agent should connect as a Machine with their own credential instead of using a person's OAuth grant.

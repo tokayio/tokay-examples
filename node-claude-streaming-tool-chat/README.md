@@ -23,7 +23,7 @@ The response footer records elapsed time and token use. Press **New chat** to cl
 
 The fastest path is MCP. Connect your client to the
 [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask the agent to deploy this folder. There is
+when your browser opens, then ask your agent to deploy this folder. There is
 no token to paste.
 
 No MCP support? Use an API token instead.
@@ -32,13 +32,13 @@ Your agent needs a Tokay API token to create the deployment. The running app sep
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **API**, and choose **New Token**.
-2. Save the Tokay token in the agent's secret store.
-3. Give your agent this folder or its GitHub URL.
-4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask the agent to deploy the chat and stop if `ANTHROPIC_API_KEY` is not available.
+1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+2. Save the Tokay token in your agent's secret store.
+3. Give your agent this folder or the example's GitHub URL.
+4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask your agent to deploy the chat and stop if `ANTHROPIC_API_KEY` is not available.
 
-If you want the agent to finish the setup, save your Anthropic key in its secret store and ask it to store `ANTHROPIC_API_KEY` as a shared Project Secret. Otherwise, add the key yourself using the steps below. Never put the key in this folder.
+If you want your agent to finish the setup, save your Anthropic key in their secret store and ask them to store `ANTHROPIC_API_KEY` as a shared Project Secret. Otherwise, add the key yourself using the steps below. Never put the key in this folder.
 
 ## Paste or upload
 

@@ -14,7 +14,7 @@ Each README tells you what the app needs, which choices to make in Tokay, and wh
 
 The fastest path is MCP. Connect your client to the [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in when your browser opens, then ask your agent to deploy the example folder and prove its main feature. There is no token to paste.
 
-No MCP support? Give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). Create a Tokay API token from **Account**, then **API**, and save it in the agent's secret store. Never put this token in the example or the deployed app.
+No MCP support? Give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). Create a Tokay API token from **Account**, then **Platform tokens**, and save it in your agent's secret store. Never put this token in the example or the deployed app.
 
 ### Paste or upload
 
@@ -36,7 +36,7 @@ Complete any required setup on each Service's **Environment** page and follow th
 4. [Replace a Zap](./node-replace-a-zap) receives lead requests and sends a scheduled digest from the same saved data.
 5. [Event tickets](./node-nextjs-postgres-event-tickets) lets you reserve tickets through a server rendered Next.js app, with optional Stripe test checkout.
 6. [AI research queue](./python-fastapi-postgres-ai-research-queue) keeps long AI research jobs moving and resumes unfinished work after a crash.
-7. [Private sales analytics MCP](./node-express-sqlite-mcp-orders) gives a headless agent read only sales tools protected by a machine token.
+7. [Private sales analytics MCP](./node-express-sqlite-mcp-orders) gives your headless agent read only sales tools protected by a Machine credential.
 8. [OAuth MCP task inbox](./node-express-sqlite-oauth-mcp-task-list) shows how to deploy a multi-user remote MCP server with visitor OAuth and no OAuth code.
 9. [Support dashboard](./python-streamlit-support-dashboard) gives coworkers a private dashboard without adding login code to the app.
 
@@ -66,7 +66,7 @@ Complete any required setup on each Service's **Environment** page and follow th
 2. [Kimi K3 chat](./node-kimi-k3-streaming-tool-chat) provides a multi-turn Markdown chat through Moonshot AI.
 3. [OpenAI chat](./node-openai-streaming-tool-chat) provides a multi-turn Markdown chat through OpenAI's Responses API.
 4. [Claude chat](./node-claude-streaming-tool-chat) provides a multi-turn Markdown chat through Anthropic's Messages API.
-5. [Private sales analytics MCP](./node-express-sqlite-mcp-orders) gives a headless agent four read only tools over saved order data using a machine token.
+5. [Private sales analytics MCP](./node-express-sqlite-mcp-orders) gives your headless agent four read only tools over saved order data using a Machine credential.
 6. [OAuth MCP task inbox](./node-express-sqlite-oauth-mcp-task-list) gives every visitor a private task list through one remote MCP endpoint.
 7. [AI research queue](./python-fastapi-postgres-ai-research-queue) keeps the web app responsive while a Background Worker handles longer research jobs.
 

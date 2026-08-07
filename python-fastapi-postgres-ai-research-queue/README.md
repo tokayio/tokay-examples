@@ -23,20 +23,20 @@ Check **Restart the worker once during this job** to watch recovery happen on pu
 
 The fastest path is MCP. Connect your client to the
 [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask the agent to deploy this folder. There is
+when your browser opens, then ask your agent to deploy this folder. There is
 no token to paste.
 
 No MCP support? Use an API token instead.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **API**, and choose **New Token**.
+1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
-3. Give your agent this folder or its GitHub URL.
-4. Point the agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask the agent to deploy exactly one Web Service and one Background Worker, connect both to the same `app` PostgreSQL database, and verify that only the Web Service owns the Alembic migration.
+3. Give your agent this folder or the example's GitHub URL.
+4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
+5. Ask your agent to deploy exactly one Web Service and one Background Worker, connect both to the same `app` PostgreSQL database, and verify that only the Web Service owns the Alembic migration.
 
-If you want real model synthesis, save your Anthropic key in the agent's secret store too and ask the agent to set `ANTHROPIC_API_KEY` as a shared Project Secret. Never put either credential in this folder.
+If you want real model synthesis, save your Anthropic key in your agent's secret store too and ask your agent to set `ANTHROPIC_API_KEY` as a shared Project Secret. Never put either credential in this folder.
 
 ## Paste or upload
 
