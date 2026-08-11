@@ -20,16 +20,14 @@ When the digest runs, its result counts each route and lists the last 24 hours o
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -44,15 +42,15 @@ Never put the Tokay API token in this folder or in either deployed Service.
 3. Enter `every day at 8am` in the digest's **Schedule** field, then check the upcoming runs and timezone.
 4. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
 5. Open each Service's **Environment** page. Under **From your infrastructure**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the receiver and digest use the same data.
-6. Follow both deployment trackers and choose **Go Live** anywhere that action appears.
+6. Continue the deployment and choose **Go Live** if prompted.
 
 ## Push with Git
 
-1. Choose **Add code**, then **Push with Git**.
+1. Choose **Add code**, then **Git**.
 2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder.
 3. Set the digest schedule to `every day at 8am` and check the upcoming runs in your timezone.
 4. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
-5. Confirm the `app` database on both Services and follow both deployment trackers. When the Function is live, copy its URL from the top of the Service page.
+5. Connect both Services to the `app` database, then continue the deployment. When the Function is live, copy its URL from the Service page.
 
 ## Try it
 
@@ -71,7 +69,7 @@ curl -X POST "$FUNCTION_URL/submit" \
 
 ## How it works
 
-You can find the whole automation boundary in two places. `/submit` replaces the trigger and `routeLead` owns the decision, while the schedule lives in Tokay where you can inspect or start a run.
+The `/submit` route receives the event, `routeLead` contains the workflow decision, and Tokay stores the schedule, Secrets, and run history.
 
 The receiver honors `x-dedupe-key` or derives one from the payload. PostgreSQL increments a duplicate count instead of inserting the same lead twice. The digest reads the last 24 hours and writes its archive under Tokay's persistent data directory.
 

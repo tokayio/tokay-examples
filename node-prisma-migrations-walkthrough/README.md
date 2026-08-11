@@ -39,16 +39,14 @@ Keep `tokay-examples-source` beside `prisma-walkthrough`. The later steps copy `
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this guide and the Tokay examples GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -64,11 +62,11 @@ Paste or upload is a quick way to try the prepared `v1` folder, but it cannot ca
 2. Upload the prepared `prisma-walkthrough` folder and choose **Analyze**.
 3. Review the detected Web Service, choose a Project, then choose **Deploy**.
 4. On the Service page, open **Environment**. Find `DATABASE_URL` under **From your infrastructure**, choose **Confirm database**, keep `app`, then choose **Confirm**.
-5. When the row says **Good to go**, follow the deployment tracker and choose **Go Live** if that action appears.
+5. After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted.
 
 ## Start the walkthrough with v1
 
-1. From the prepared `prisma-walkthrough` repository, choose **Add code**, then **Push with Git** in Tokay.
+1. From the prepared `prisma-walkthrough` repository, choose **Add code**, then **Git** in Tokay.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push the `v1` commit to the remote shown in those instructions.
 
@@ -78,7 +76,7 @@ git push tokay main
 
 4. Choose the detected Web Service and a Project, then choose **Deploy**.
 5. Open the walkthrough Service's **Environment** page. Confirm the `app` database for `DATABASE_URL`.
-6. When `DATABASE_URL` says **Good to go**, follow the deployment tracker and choose **Go Live** if that action appears.
+6. Continue the deployment and choose **Go Live** if prompted.
 
 ## Try it
 
@@ -104,7 +102,7 @@ git commit -m "Remove page visit tracking"
 git push tokay main
 ```
 
-3. Choose **Review release** and inspect the populated `public.PageVisit` drop. Apply it with downtime, then reopen **Field Notes** and confirm your signup remains. In a production Project, the release also shows its restore point under **Database snapshots**.
+3. Choose **Review release** and inspect the populated `public.PageVisit` drop. Apply it with downtime, then reopen **Field Notes** and confirm your signup is still present. In a production Project, the release also shows its restore point under **Database snapshots**.
 
 Your agent sees the same stop as `ACTION_REQUIRED` with action `CONFIRM_RELEASE`. They must show you the rehearsal evidence and wait for your decision.
 

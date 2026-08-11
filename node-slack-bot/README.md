@@ -34,16 +34,14 @@ Keep both tokens out of this folder and out of chat.
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token and both Slack tokens in their secret store, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Save the Tokay token, `SLACK_BOT_TOKEN`, and `SLACK_APP_TOKEN` in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -60,7 +58,7 @@ The Tokay token lets your agent deploy. The two Slack tokens let the running bot
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Background Worker and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Add both Slack tokens using the steps below.
@@ -69,7 +67,7 @@ The Tokay token lets your agent deploy. The two Slack tokens let the running bot
 
 Open **Environment** and find `SLACK_BOT_TOKEN` and `SLACK_APP_TOKEN` under **From your code**. Choose **Set shared value** for each one, paste the matching token, and save it.
 
-When both rows say **Good to go**, follow the deployment tracker and choose **Go Live** if that action appears. The Background Worker has no public page. **Logs** will show when the bot is connected.
+After saving both Slack tokens, continue the deployment and choose **Go Live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
 
 ## Try it
 
@@ -87,7 +85,7 @@ Tokay restarts the Background Worker and makes a repeated failure visible as an 
 
 You can use the bot without a public URL because Bolt keeps one outbound WebSocket open to Slack. Mentions and slash commands arrive on that connection, and replies go back through Slack's API.
 
-During a deployment, Tokay gives the old process time to close its connection before the replacement takes over. A failed login remains in **Logs** instead of looking like a silent bot.
+During a deployment, Tokay gives the old process time to close its connection before the replacement takes over. A failed login stays in **Logs** instead of looking like a silent bot.
 
 ## Secrets
 

@@ -33,16 +33,14 @@ These commands do not need privileged intents. If a Discord screen looks differe
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token and the Discord bot token in their secret store, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Save the Tokay token and Discord bot token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -59,7 +57,7 @@ The Tokay token lets your agent deploy. The Discord token lets the running bot c
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Background Worker and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Add the Discord token using the steps below.
@@ -68,7 +66,7 @@ The Tokay token lets your agent deploy. The Discord token lets the running bot c
 
 Open **Environment** and find `DISCORD_TOKEN` under **From your code**. Choose **Set shared value**, paste the bot token, and save it.
 
-When the row says **Good to go**, follow the deployment tracker and choose **Go Live** if that action appears. The Background Worker has no public page. **Logs** will show when the bot is connected.
+After saving the bot token, continue the deployment and choose **Go Live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
 
 ## Try it
 

@@ -21,16 +21,14 @@ Under **Team annotations**, edit the context attached to a recent date and press
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -47,7 +45,7 @@ Never put the Tokay API token in this folder or in the deployed dashboard.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
@@ -56,14 +54,14 @@ Never put the Tokay API token in this folder or in the deployed dashboard.
 
 The dashboard needs PostgreSQL to keep the ticket history and team notes. Open **Environment** and find `DATABASE_URL` under **From your infrastructure**. Choose **Confirm database**, keep the suggested `app` name, then choose **Confirm**.
 
-Continue through the deployment tracker after `DATABASE_URL` reaches **Good to go**. Choose **Go Live** if it appears. Before sharing the finished Service URL, use the steps below to make the dashboard private.
+After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. Before sharing the finished Service URL, use the steps below to make the dashboard private.
 
 ## Make the dashboard private
 
-1. Choose **App audience** from the Project.
-2. Set **Audience** to **Specific people**. Leave **Project members** selected so your teammates can sign in.
-3. Choose **Save audience**. Review **Restrict who can visit**, then choose **Save**.
-4. To invite someone else, choose **Add visitor**, enter the coworker's email, and choose **Add**. They will receive a magic link when they first visit.
+1. To limit the dashboard to support staff, open the Project's **Access** tab and make the Project Private.
+2. Under **Services**, choose **Edit access** for the dashboard, then choose **Require access** if the Service is Public.
+3. Under **Audience**, keep Project members included and add any visitors or email domains that should have access.
+4. Save the audience. Visitors receive a magic link when they first open the dashboard.
 
 Open the live URL in a signed out browser. Tokay starts the sign in flow before Streamlit appears.
 

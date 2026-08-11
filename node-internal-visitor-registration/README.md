@@ -21,16 +21,14 @@ Every public submission appears on the staff page with **Guest link** as its sou
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -43,25 +41,23 @@ Never put the Tokay API token in this folder or in the deployed app.
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
 3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, use the steps below to set the audience before sharing the URL.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, use the steps below to set the audience before sharing the URL.
 
 ## Keep the staff pages private
 
-1. From the Project, open **App audience**.
-2. Change **Audience** to **Specific people**. Leave **Project members** selected.
-3. Choose **Save audience**. Review **Restrict who can visit** and choose **Save**.
-4. Under **Public endpoints**, choose **Add endpoint**.
-5. In **Service**, choose the visitor registration Web Service.
-6. In **Path**, enter `/submit`, then choose **Add**.
+1. To protect the staff pages while leaving registration public, open the Project's **Access** tab and make the Project Private.
+2. Under **Services**, choose **Edit access** for the visitor registration Web Service, then choose **Require access** if the Service is Public.
+3. Under **Audience**, keep Project members included and save the audience.
+4. In the same Service editor, open **Public paths** and add `/submit`.
 
 Use the exact path `/submit`. The rule `/submit/*` covers paths below it but does not include the form itself.
 
@@ -69,7 +65,7 @@ Use the exact path `/submit`. The rule `/submit/*` covers paths below it but doe
 
 1. Open the root in a signed out browser and confirm Tokay asks you to sign in. Then open `/submit` without signing in.
 2. Register a visit and check the confirmation page.
-3. Sign in to the root, find the **Guest link** entry, then deploy again. The registration remains in the staff history.
+3. Sign in to the root, find the **Guest link** entry, then deploy again. The registration is still in the staff history.
 
 The public rule covers every HTTP method on `/submit`, so the app still checks which methods are allowed. `GET` shows the form, `POST` saves it, and every other method returns `405`.
 

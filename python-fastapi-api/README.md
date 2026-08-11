@@ -2,7 +2,7 @@
 
 A FastAPI todo service gives you generated API docs, request validation, a health check, and routes for listing or adding todos. Tokay runs it at a live URL as one Web Service.
 
-Use this example when your Python project already looks like a normal FastAPI app. Tokay reads the source and requirements, then handles the running service around them.
+This example matches a normal FastAPI project. Tokay analyzes the source and `requirements.txt` to detect the FastAPI start command and dependencies.
 
 ## Guide and download
 
@@ -20,16 +20,14 @@ The root response shows the Python version. `/health` returns a compact liveness
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -42,15 +40,15 @@ Never put the Tokay API token in this folder or in the deployed app.
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload `main.py` and `requirements.txt`, then choose **Analyze**.
 3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, copy the live URL from the top section.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, copy the live URL from the top section.
 
 ## Try it
@@ -69,7 +67,7 @@ The response list now includes your todo. Restart or deploy again and the sample
 
 ## How it works
 
-Wondering how the docs and validation appear? FastAPI and Pydantic generate them from the route and model definitions in `main.py`. Tokay installs the requirements and starts that app without changing its structure.
+FastAPI and Pydantic generate the API docs and validation from the route and model definitions in `main.py`. Tokay installs the requirements and starts the app without changing its structure.
 
 ## Secrets
 

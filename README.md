@@ -12,9 +12,9 @@ Each README tells you what the app needs, which choices to make in Tokay, and wh
 
 ### Tell your agent
 
-The fastest path is MCP. Connect your client to the [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in when your browser opens, then ask your agent to deploy the example folder and prove its main feature. There is no token to paste.
+If your client supports remote MCP, connect it to the [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in, and ask your agent to deploy the example folder and prove its main feature without pasting a token.
 
-No MCP support? Give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). Create a Tokay API token from **Account**, then **Platform tokens**, and save it in your agent's secret store. Never put this token in the example or the deployed app.
+Otherwise, give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). To create a Tokay API token, open **You**, choose **API & MCP tokens**, then **New Token**, and save the token in your agent's secret store. Never put this token in the example or the deployed app.
 
 ### Paste or upload
 
@@ -24,7 +24,7 @@ Complete any required setup on each Service's **Environment** page, then follow 
 
 ### Push with Git
 
-Open Tokay and choose **Add code**, then **Push with Git**. Create a repository and follow the Git setup commands shown by Tokay. Push the example folder, then choose the detected Services and a Project. Use **Deploy**, **Test & Schedule**, or **Deploy 2 Services** as directed by the example README.
+Open Tokay and choose **Add code**, then **Git**. Create a repository and follow the Git setup commands shown by Tokay. Push the example folder, then choose the detected Services and a Project. Use **Deploy**, **Test & Schedule**, or **Deploy 2 Services** as directed by the example README.
 
 Complete any required setup on each Service's **Environment** page and follow the deployment tracker. If **Go Live** appears, choose it. Once the Service is live, follow its README to try the main feature.
 
@@ -37,7 +37,7 @@ Complete any required setup on each Service's **Environment** page and follow th
 5. [Event tickets](./node-nextjs-postgres-event-tickets) lets you reserve tickets through a server rendered Next.js app, with optional Stripe test checkout.
 6. [AI research queue](./python-fastapi-postgres-ai-research-queue) keeps long AI research jobs moving and resumes unfinished work after a crash.
 7. [Private sales analytics MCP](./node-express-sqlite-mcp-orders) gives your headless agent read only sales tools protected by a Machine credential.
-8. [OAuth MCP task inbox](./node-express-sqlite-oauth-mcp-task-list) shows how to deploy a multi-user remote MCP server with visitor OAuth and no OAuth code.
+8. [OAuth MCP task inbox](./node-express-sqlite-oauth-mcp-task-list) shows how to deploy a remote MCP server for multiple users with visitor OAuth and no OAuth code.
 9. [Support dashboard](./python-streamlit-support-dashboard) gives coworkers a private dashboard without adding login code to the app.
 
 ## Start with your language
@@ -63,9 +63,9 @@ Complete any required setup on each Service's **Environment** page and follow th
 ## AI apps and integrations
 
 1. [OpenRouter model chat](./node-openrouter-chat) lets you chat with a model chosen through Config while keeping the OpenRouter API key secret.
-2. [Kimi K3 chat](./node-kimi-k3-streaming-tool-chat) provides a multi-turn Markdown chat through Moonshot AI.
-3. [OpenAI chat](./node-openai-streaming-tool-chat) provides a multi-turn Markdown chat through OpenAI's Responses API.
-4. [Claude chat](./node-claude-streaming-tool-chat) provides a multi-turn Markdown chat through Anthropic's Messages API.
+2. [Kimi K3 chat](./node-kimi-k3-streaming-tool-chat) provides a Markdown conversation across multiple turns through Moonshot AI.
+3. [OpenAI chat](./node-openai-streaming-tool-chat) provides a Markdown conversation across multiple turns through OpenAI's Responses API.
+4. [Claude chat](./node-claude-streaming-tool-chat) provides a Markdown conversation across multiple turns through Anthropic's Messages API.
 5. [Private sales analytics MCP](./node-express-sqlite-mcp-orders) gives your headless agent four read only tools over saved order data using a Machine credential.
 6. [OAuth MCP task inbox](./node-express-sqlite-oauth-mcp-task-list) gives every visitor a private task list through one remote MCP endpoint.
 7. [AI research queue](./python-fastapi-postgres-ai-research-queue) keeps the web app responsive while a Background Worker handles longer research jobs.

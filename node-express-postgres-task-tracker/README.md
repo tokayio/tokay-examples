@@ -21,16 +21,14 @@ The form adds a dated task to one of the three teams. Tasks you create also get 
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -47,7 +45,7 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
@@ -62,7 +60,7 @@ The task tracker needs PostgreSQL to save your work. Tokay has already prepared 
 4. Keep the suggested `app` name.
 5. Choose **Confirm**.
 
-Once `DATABASE_URL` is **Good to go**, continue through the deployment tracker. Tokay tests the committed database migration against a copy before the app receives traffic. Choose **Go Live** when the tracker offers it. Open the live URL from the finished Service to see the board.
+The task tracker has everything it needs once its Service is connected to the `app` database. Tokay tests the committed database migration against a copy before the app receives traffic. Choose **Go Live** if prompted, then open the live URL to see the board.
 
 ## Try it
 
@@ -80,7 +78,7 @@ curl -X POST "$APP_URL/api/tasks" \
 
 ## How it works
 
-Wondering how both interfaces stay together? The page and API call the same Express server and PostgreSQL tables. The server rejects invalid titles, dates, statuses, and filters before a write reaches the database.
+The page and API use the same Express server and PostgreSQL tables. The server rejects invalid titles, dates, statuses, and filters before a write reaches the database.
 
 The schema lives in a Graphile Migrate file beside the app. Tokay rehearses that migration against a copy before applying it, then the server adds any missing starter tasks after the tables are ready.
 
