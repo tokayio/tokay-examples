@@ -21,16 +21,14 @@ You can test the endpoint while the Project is public, then protect it with a To
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -43,15 +41,15 @@ The Tokay API token manages the deployment. It does not give anyone access to th
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
 3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, click the live URL in the top section to open the MCP landing page.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, click the live URL in the top section to open the MCP landing page.
 
 ## Test it while the Project is public
@@ -62,8 +60,8 @@ If you want to test the tools without a model, use the MCP Inspector command sho
 
 ## Connect your headless agent with a Machine credential
 
-1. Choose **App audience** in the Project.
-2. Set **Audience** to **Specific people**. Keep the people you want, then choose **Save audience** and confirm with **Save**.
+1. To protect the order API before creating its Machine credential, open the Project's **Access** tab and make the Project Private.
+2. Under **Services**, choose **Edit access** for the web app, then choose **Require access** if the Service is Public.
 3. Under **Machines**, choose **Create Machine**. Name it `claude-orders`, then choose **Create Machine**.
 4. On the new Machine, choose **Issue credential**. Name it `claude-code`, choose **Issue credential**, and copy the full value from the next dialog. Save it now because Tokay shows it once.
 5. Run the private Claude Code command shown on the app's landing page. Replace `<machine-credential>` with the value you just copied.
@@ -87,17 +85,17 @@ You can replace a credential without creating another Machine or splitting its a
 
 1. Ask `How were sales last week?` and note the order count and revenue.
 2. Deploy the same code again.
-3. Repeat the question. The same seeded order history remains in SQLite.
+3. Repeat the question. The same seeded order history is still in SQLite.
 
 ## How it works
 
-You can trust the access boundary because the server exposes named MCP tools rather than a database prompt. Each tool validates its inputs, runs one bounded query, and returns only the requested result.
+Each named MCP tool validates a bounded input and runs one fixed read only query, so callers cannot submit arbitrary SQL.
 
 The app adds its fictional order history only when the SQLite database is empty. Tokay preserves that file through restarts and deployments. Read [Files and persistent storage](https://tokay.io/docs/persistent-storage) to see how the data is protected.
 
 ## Secrets
 
-You do not need a Project Secret. Private access uses a Machine credential issued under **App audience**, while public smoke tests need no credential.
+You do not need a Project Secret. Private access uses a Machine credential issued from the Project's **Access** tab, while public smoke tests need no credential.
 
 ## Grow from here
 

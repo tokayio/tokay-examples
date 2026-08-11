@@ -21,16 +21,14 @@ The desk keeps the newest eight completed batches. A ninth removes the oldest te
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -43,15 +41,15 @@ Never put the Tokay API token in this folder or in either deployed Service.
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**. Tokay detects a Web Service in `web` and a Background Worker in `worker`.
 3. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
-4. Open each Service's **Environment** page and check that `REDIS_URL` says **Good to go** from the same managed Redis resource.
-5. Follow both deployment trackers and choose **Go Live** anywhere that action appears.
+4. Open each Service's **Environment** page and verify that both use the same managed Redis resource for `REDIS_URL`.
+5. Continue the deployment and choose **Go Live** if prompted.
 
 ## Push with Git
 
-1. Choose **Add code**, then **Push with Git**.
+1. Choose **Add code**, then **Git**.
 2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder.
 3. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
-4. Check `REDIS_URL` on both Services and follow both deployment trackers. Choose **Go Live** where offered, then open the statement desk from the Web Service's live URL.
+4. Verify that both Services use the same managed Redis resource for `REDIS_URL`, then continue the deployment. Choose **Go Live** if prompted, then open the statement desk from the Web Service's live URL.
 
 ## Try it
 

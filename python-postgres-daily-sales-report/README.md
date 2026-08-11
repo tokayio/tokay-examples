@@ -21,16 +21,14 @@ Run the same reporting date again and the existing report refreshes instead of p
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -45,15 +43,15 @@ Never put the Tokay API token in this folder or in either deployed Service.
 3. Enter `every morning at 8` in the generator's **Schedule** field, then check the upcoming runs and timezone.
 4. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
 5. Open each Service's **Environment** page. Under **From your infrastructure**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the generator and viewer share the same reports.
-6. Check that only the viewer shows the Alembic migration. Follow both deployment trackers and choose **Go Live** anywhere that action appears. When the viewer status says **Live**, click its live URL in the top section.
+6. Check that only the viewer shows the Alembic migration, then continue the deployment and choose **Go Live** if prompted. When the viewer is live, open it from its URL.
 
 ## Push with Git
 
-1. Choose **Add code**, then **Push with Git**.
+1. Choose **Add code**, then **Git**.
 2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder.
 3. Set the generator schedule to `every morning at 8` and check the upcoming runs in your timezone.
 4. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
-5. Confirm the `app` database on both Services and follow both deployment trackers. Choose **Go Live** where offered, then open the viewer from its live URL.
+5. Connect both Services to the `app` database, then continue the deployment. Choose **Go Live** if prompted, then open the viewer from its live URL.
 
 ## Try it
 
@@ -65,7 +63,7 @@ Never put the Tokay API token in this folder or in either deployed Service.
 
 You only need one schema owner. The viewer applies the Alembic migration and seeds fictional orders, while the generator reads those tables, calculates its reporting windows, saves one dated result, and exits.
 
-Tokay starts that short process on schedule and keeps every run result. If the calculation fails, the error remains attached to the run instead of disappearing into a long lived server log.
+Tokay starts that short process on schedule and keeps every run result. If the calculation fails, the error stays attached to the run instead of disappearing into a long lived server log.
 
 ## Secrets
 

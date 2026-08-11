@@ -21,16 +21,14 @@ Check **Restart the worker once during this job** to watch recovery happen on pu
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -45,15 +43,15 @@ If you want real model synthesis, save your Anthropic key in your agent's secret
 3. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
 4. Open each Service's **Environment** page. Under **From your infrastructure**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the page and worker use the same jobs and checkpoints.
 5. Check that only the Web Service shows the Alembic migration. This keeps the database change from running twice.
-6. Follow both deployment trackers and choose **Go Live** anywhere that action appears. When the Web Service status says **Live**, click its live URL in the top section to open the research queue.
+6. Continue the deployment and choose **Go Live** if prompted. When the Web Service is live, open the research queue from its URL.
 
 ## Push with Git
 
-1. Choose **Add code**, then **Push with Git**.
+1. Choose **Add code**, then **Git**.
 2. Create a repository, follow the Git setup commands shown by Tokay, and push this whole folder.
 3. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
 4. Confirm the `app` database on both Services and check that only the Web Service shows the Alembic migration.
-5. Follow both deployment trackers and choose **Go Live** anywhere that action appears. Open the research queue from the Web Service's live URL.
+5. Continue the deployment and choose **Go Live** if prompted. Open the research queue from the Web Service's live URL.
 
 ## Try it
 
@@ -73,7 +71,7 @@ You avoid competing schema changes because the Web Service owns the Alembic migr
 
 Each claimed job has a short lease that the worker renews while saving progress. If the process disappears, the lease expires and another worker continues from the checkpoint. `FOR UPDATE SKIP LOCKED` prevents two live workers from claiming the same job.
 
-The queue retries a temporary failure up to three times. SSE updates the page without a refresh, while PostgreSQL remains the source of truth if that browser connection closes.
+The queue retries a temporary failure up to three times. SSE updates the page without a refresh, while PostgreSQL is the source of truth if that browser connection closes.
 
 ## Secrets
 

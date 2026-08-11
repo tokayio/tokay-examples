@@ -21,16 +21,14 @@ When Stripe test mode is connected, the button changes to **Continue to Stripe t
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -47,7 +45,7 @@ Never put the Tokay API token or Stripe keys in this folder.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
@@ -56,13 +54,13 @@ Never put the Tokay API token or Stripe keys in this folder.
 
 The ticket app needs PostgreSQL to keep orders and ticket codes. Open **Environment** and find `DATABASE_URL` under **From your infrastructure**. Confirm the suggested database, leave its name as `app`, and finish with **Confirm**.
 
-Finish the deployment tracker once `DATABASE_URL` shows **Good to go**. Choose **Go Live** if Tokay asks. The live URL at the top of the finished Service opens the event page.
+After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. The live URL at the top of the finished Service opens the event page.
 
 ## Try it
 
 1. Choose two seats and press **Complete free test order**.
 2. Save the ticket page URL, then deploy the same code again.
-3. Open that URL. Your ticket code remains, and the event page still counts both seats.
+3. Open that URL. Your ticket code is still available, and the event page still counts both seats.
 
 ## Add Stripe test checkout
 

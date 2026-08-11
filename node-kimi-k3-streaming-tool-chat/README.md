@@ -21,18 +21,16 @@ Below each response, the page shows elapsed time and token counts. **New chat** 
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 Your agent needs a Tokay API token to create the deployment. The running app separately needs your Moonshot key.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Save the Tokay token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -49,7 +47,7 @@ If you want your agent to finish the setup, save your Moonshot key in their secr
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Add your Moonshot key using the steps below.
@@ -58,7 +56,7 @@ If you want your agent to finish the setup, save your Moonshot key in their secr
 
 Create a key in the [Kimi API Platform](https://platform.kimi.ai/console/api-keys). On the Service page, open **Environment** and find `MOONSHOT_API_KEY` under **From your code**. Choose **Set shared value**, keep the value secret, and save your Kimi key.
 
-Once the Kimi key is **Good to go**, finish the deployment tracker and use **Go Live** if offered. Open the chat from the live URL at the top of the Service.
+After saving the Kimi key, continue the deployment and choose **Go Live** if prompted. Open the chat from the live URL at the top of the Service.
 
 ## Try it
 

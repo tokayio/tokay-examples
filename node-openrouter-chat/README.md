@@ -20,18 +20,16 @@ Each answer shows its response time and token use. When OpenRouter reports cache
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 Your agent needs a Tokay API token to create the deployment. The running app separately needs your OpenRouter key and a model slug.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Save the Tokay token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -48,7 +46,7 @@ If you want your agent to finish the setup, save your OpenRouter key in their se
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
 4. Tokay opens the new Service page. Add the OpenRouter values using the steps below.
@@ -60,7 +58,7 @@ If you want your agent to finish the setup, save your OpenRouter key in their se
 3. On the Service page, open **Environment** and find `OPENROUTER_API_KEY` under **From your code**. Choose **Set shared value**, keep **Visibility** on **Secret**, and save the key.
 4. Find `OPENROUTER_MODEL` and choose **Set shared value**. Change **Visibility** to **Config**, paste the model slug, and save it.
 
-Finish the deployment tracker after both OpenRouter rows say **Good to go**. Choose **Go Live** if Tokay presents it. The live URL at the top of the Service opens the chat.
+After saving the OpenRouter key and model, continue the deployment and choose **Go Live** if prompted. The live URL at the top of the Service opens the chat.
 
 ## Try it
 

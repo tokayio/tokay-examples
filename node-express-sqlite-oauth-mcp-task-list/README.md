@@ -21,16 +21,14 @@ A second visitor uses the same endpoint but starts with an empty inbox. The app 
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -43,27 +41,27 @@ The Tokay API token manages the deployment. It is not the OAuth token used by MC
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
 3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, open the live URL.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, open the live URL.
 
 ## Turn on visitor OAuth
 
 OAuth is automatic for restricted Tokay apps. There are no client IDs, callback URLs, OAuth secrets, or environment variables to configure in this project.
 
-1. Open the Project and choose **App audience**.
-2. Under **Audience**, choose **Specific people**.
-3. Under **Specific people**, add each outside visitor who should connect. Project admins already have access.
-4. Choose **Save audience**, then confirm with **Save**.
+1. To give each visitor their own OAuth connection, open the Project's **Access** tab and make the Project Private.
+2. Under **Services**, choose **Edit access** for the web app, then choose **Require access** if the Service is Public.
+3. Under **Audience**, add each outside visitor who should connect. Project members already have access.
+4. Save the audience.
 
-Restricted Services automatically publish the standard MCP protected-resource metadata and OAuth authorization-server metadata. Each visitor signs in and approves their own connection. The builder does not mint a token on their behalf.
+Restricted Services automatically publish the standard MCP metadata for protected resources and OAuth authorization servers. Each visitor signs in and approves their own connection. The builder does not mint a token on their behalf.
 
 ## Connect from Claude Code
 
@@ -83,7 +81,7 @@ If you add a second visitor, have them connect with their own email. Their list 
 
 1. Ask your client to add `Renew passport` with a due date next Friday.
 2. Mark that task complete, then deploy the app again.
-3. List completed tasks. Your passport reminder remains, while another visitor still sees only their own inbox.
+3. List completed tasks. Your passport reminder is still listed, while another visitor still sees only their own inbox.
 
 ## How OAuth identity reaches the app
 

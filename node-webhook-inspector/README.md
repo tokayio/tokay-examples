@@ -14,22 +14,20 @@ https://tokay.io/examples/downloads/node-webhook-inspector.zip.
 
 Press **Send Test Event** and the request appears under **Requests** with the Function's JSON response and matching log line.
 
-Send a payload containing an email and message and the handler labels it `form lead`. An `order.created` event receives `new order`, while anything else remains `general`.
+Send a payload containing an email and message and the handler labels it `form lead`. An `order.created` event receives `new order`, while anything else receives `general`.
 
 Once `WEBHOOK_SECRET` is set, unsigned or invalid requests receive `401`. Generic SHA256 headers and Stripe style timestamped signatures are both accepted.
 
 ## Deploy with your agent
 
-The fastest path is MCP. Connect your client to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the sign in
-when your browser opens, then ask your agent to deploy this folder. There is
-no token to paste.
-
-No MCP support? Use an API token instead.
+If your client supports remote MCP, connect it to the
+[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
+and ask your agent to deploy this folder without pasting a token. Otherwise,
+follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **Account**, then **Platform tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -42,15 +40,15 @@ Never put the Tokay API token in this folder or in the deployed Function.
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
 3. Tokay detects one Function. Choose a Project, then choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, choose **Send Test Event**.
 
 ## Push with Git
 
-1. Open Tokay and choose **Add code**, then **Push with Git**.
+1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Function and a Project. Choose **Deploy**.
-4. Wait for the deployment to finish. If **Go Live** appears, choose it.
+4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, choose **Send Test Event**.
 
 ## Try it
