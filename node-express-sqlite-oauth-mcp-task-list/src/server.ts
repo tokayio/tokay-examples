@@ -297,7 +297,7 @@ app.get("/", (request, response) => {
   const identity = identityFrom(request);
   const identityMessage = identity
     ? `Signed in as <strong>${escapeHtml(identity.email)}</strong>. Your MCP client sees only this account's tasks.`
-    : "Make this Project private with Tokay Access to enable visitor OAuth and per-person task lists.";
+    : "Make this Service Private and attach a visitor Group to enable OAuth and per-person task lists.";
 
   response.type("html").send(`<!doctype html>
 <html lang="en">

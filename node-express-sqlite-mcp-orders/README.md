@@ -17,7 +17,7 @@ The landing page shows the MCP endpoint and ready to run commands for Claude Cod
 
 Ask how sales performed over a period, search for a customer such as Maya, request recent orders, or compare the products leading revenue. Each tool accepts a small bounded input rather than arbitrary SQL.
 
-You can test the endpoint while the Project is public, then protect it with a Tokay Machine credential before your headless agent begins regular work.
+You can test the endpoint while the Service is Public, then protect it with a Tokay Machine credential before your headless agent begins regular work.
 
 ## Deploy with your agent
 
@@ -52,7 +52,7 @@ The Tokay API token manages the deployment. It does not give anyone access to th
 4. Continue the deployment and choose **Go Live** if prompted.
 5. When the Service status says **Live**, click the live URL in the top section to open the MCP landing page.
 
-## Test it while the Project is public
+## Test it while the Service is Public
 
 The landing page gives you the exact command for connecting Claude Code. Run it, then ask Claude `How were sales last week?`
 
@@ -60,10 +60,10 @@ If you want to test the tools without a model, use the MCP Inspector command sho
 
 ## Connect your headless agent with a Machine credential
 
-1. To protect the order API before creating its Machine credential, open the Project's **Access** tab and make the Project Private.
-2. Under **Services**, choose **Edit access** for the web app, then choose **Require access** if the Service is Public.
-3. Under **Machines**, choose **Create Machine**. Name it `claude-orders`, then choose **Create Machine**.
-4. On the new Machine, choose **Issue credential**. Name it `claude-code`, choose **Issue credential**, and copy the full value from the next dialog. Save it now because Tokay shows it once.
+1. Open the Project **Audience** page and choose **Machines**, then **New Machine**. Name it `claude-orders`.
+2. On the new Machine, choose **Issue credential**. Name it `claude-code`, choose **Issue credential**, and copy the full value from the next dialog. Save it now because Tokay shows it once.
+3. Open the Service **Access** tab and create a Group named `Agents`. Add `claude-orders`, then choose **Done** to attach the Group.
+4. On the Service page beside the URL, change **Public** to **Private**.
 5. Run the private Claude Code command shown on the app's landing page. Replace `<machine-credential>` with the value you just copied.
 6. Ask Claude `What sold best in the last 30 days?` Then check **Access log** in Tokay to see the Machine and credential used.
 
@@ -95,7 +95,7 @@ The app adds its fictional order history only when the SQLite database is empty.
 
 ## Secrets
 
-You do not need a Project Secret. Private access uses a Machine credential issued from the Project's **Access** tab, while public smoke tests need no credential.
+You do not need a Project Secret. Private access uses a Machine credential placed in an attached Group, while Public smoke tests need no credential.
 
 ## Grow from here
 
