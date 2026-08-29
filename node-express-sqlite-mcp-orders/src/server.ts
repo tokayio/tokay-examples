@@ -262,16 +262,16 @@ app.get("/", (_request, response) => {
 
     <section>
       <h2>Connect a headless agent</h2>
-      <p>Make the Project private under <strong>App audience</strong>, create a Machine, issue a credential, and pass it as a bearer header.</p>
+      <p>Create a Machine, put it in a Group attached to this Service, make the Service Private, and pass the Machine credential as a bearer header.</p>
       <pre><code id="claude-private"></code></pre>
       <h3>Optional public smoke test</h3>
-      <p>Before restricting the Project, you can verify the MCP handshake without a credential.</p>
+      <p>Before making the Service Private, you can verify the MCP handshake without a credential.</p>
       <pre><code id="claude-public"></code></pre>
     </section>
 
     <section>
       <h2>Check the public smoke test</h2>
-      <p>While the Project is public, list the tools with MCP Inspector. Then make it private and use the Machine credential command above.</p>
+      <p>While the Service is Public, list the tools with MCP Inspector. Then make it Private and use the Machine credential command above.</p>
       <pre><code id="inspector"></code></pre>
     </section>
 

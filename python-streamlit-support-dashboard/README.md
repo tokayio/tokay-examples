@@ -32,7 +32,7 @@ If your agent already has a Tokay API token, start at step 3.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask your agent to deploy the dashboard with PostgreSQL, restrict the Project to Project members, and confirm that a signed out visitor cannot reach Streamlit.
+5. Ask your agent to deploy the dashboard with PostgreSQL, make the Service Private, create a Group for support staff, and confirm that a signed out visitor cannot reach Streamlit.
 
 Never put the Tokay API token in this folder or in the deployed dashboard.
 
@@ -58,10 +58,10 @@ After connecting the Service to the `app` database, continue the deployment and 
 
 ## Make the dashboard private
 
-1. To limit the dashboard to support staff, open the Project's **Access** tab and make the Project Private.
-2. Under **Services**, choose **Edit access** for the dashboard, then choose **Require access** if the Service is Public.
-3. Under **Audience**, keep Project members included and add any visitors or email domains that should have access.
-4. Save the audience. Visitors receive a magic link when they first open the dashboard.
+1. On the Service page beside the URL, change **Public** to **Private**.
+2. Open the Service **Access** tab and choose **Create group**. Name it `Support staff`.
+3. Add each support staff email or the company email domain.
+4. Choose **Done** to attach the Group to the Service. Visitors receive a magic link when they first open the dashboard.
 
 Open the live URL in a signed out browser. Tokay starts the sign in flow before Streamlit appears.
 
@@ -77,11 +77,11 @@ You can build the whole interface with ordinary Streamlit components. Pandas sup
 
 The Alembic migration stays beside the app, and Tokay tests it against a copy before applying it. Fictional ticket history appears only when the tables are empty.
 
-Audience settings stop unapproved visitors before Streamlit handles their request. You can add Project members, approved email domains, or specific people without changing Python code.
+The attached Group stops unapproved visitors before Streamlit handles their request. You can add a company email domain or specific people without changing Python code.
 
 ## Secrets
 
-You do not need an application secret. Tokay supplies `DATABASE_URL`, and the Project audience controls coworker access.
+You do not need an application secret. Tokay supplies `DATABASE_URL`, and the Service's attached Group controls coworker access.
 
 ## Grow from here
 

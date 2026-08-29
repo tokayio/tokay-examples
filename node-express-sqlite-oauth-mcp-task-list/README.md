@@ -54,14 +54,14 @@ The Tokay API token manages the deployment. It is not the OAuth token used by MC
 
 ## Turn on visitor OAuth
 
-OAuth is automatic for restricted Tokay apps. There are no client IDs, callback URLs, OAuth secrets, or environment variables to configure in this project.
+OAuth is automatic for Private Tokay apps. There are no client IDs, callback URLs, OAuth secrets, or environment variables to configure in this project.
 
-1. To give each visitor their own OAuth connection, open the Project's **Access** tab and make the Project Private.
-2. Under **Services**, choose **Edit access** for the web app, then choose **Require access** if the Service is Public.
-3. Under **Audience**, add each outside visitor who should connect. Project members already have access.
-4. Save the audience.
+1. On the Service page beside the URL, change **Public** to **Private**.
+2. Open the Service **Access** tab and choose **Create group**. Name it `Visitors`.
+3. Add the email of each visitor who should connect.
+4. Choose **Done** to attach the Group to the Service.
 
-Restricted Services automatically publish the standard MCP metadata for protected resources and OAuth authorization servers. Each visitor signs in and approves their own connection. The builder does not mint a token on their behalf.
+Private Services automatically publish the standard MCP metadata for protected resources and OAuth authorization servers. Each visitor signs in and approves their own connection. The builder does not mint a token on their behalf.
 
 ## Connect from Claude Code
 
