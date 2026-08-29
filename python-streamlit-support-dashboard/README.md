@@ -58,7 +58,7 @@ After connecting the Service to the `app` database, continue the deployment and 
 
 ## Make the dashboard private
 
-1. On the Service page beside the URL, change **Public** to **Private**.
+1. Beside the dashboard URL, change **Public** to **Private**.
 2. Open the Service **Access** tab and choose **Create group**. Name it `Support staff`.
 3. Add each support staff email or the company email domain.
 4. Choose **Done** to attach the Group to the Service. Visitors receive a magic link when they first open the dashboard.

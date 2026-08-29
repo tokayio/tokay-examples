@@ -56,7 +56,7 @@ The Tokay API token manages the deployment. It is not the OAuth token used by MC
 
 OAuth is automatic for Private Tokay apps. There are no client IDs, callback URLs, OAuth secrets, or environment variables to configure in this project.
 
-1. On the Service page beside the URL, change **Public** to **Private**.
+1. Beside the MCP Service URL, change **Public** to **Private**.
 2. Open the Service **Access** tab and choose **Create group**. Name it `Visitors`.
 3. Add the email of each visitor who should connect.
 4. Choose **Done** to attach the Group to the Service.
