@@ -54,7 +54,7 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 ## Keep the staff pages private
 
-1. On the Service page beside the URL, change **Public** to **Private**.
+1. Use the selector beside the visitor registration URL to make the Service **Private**.
 2. Open the Service **Access** tab and create a Group named `Staff`.
 3. Add each staff email or the company email domain, then choose **Done** to attach the Group.
 4. In **Public endpoints**, add `GET, POST` on `/submit`.
