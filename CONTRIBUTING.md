@@ -84,4 +84,4 @@ site-ready together. The website pins an exact repository commit. It never fetch
 moving revision during a normal documentation build.
 
 This repository follows `../platform/CLAUDE.md` § Git Workflow verbatim, including
-"ship it" and "release the gecko"; `make -C ../platform git-hooks` enrolls this clone.
+"ship it", "sync it", and "release the gecko".
