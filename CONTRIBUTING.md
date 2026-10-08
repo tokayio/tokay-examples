@@ -82,6 +82,3 @@ allowed when the array has an entry.
 Merge to `main` only when the example, README, catalog record, and root catalog are
 site-ready together. The website pins an exact repository commit. It never fetches a
 moving revision during a normal documentation build.
-
-This repository follows `../platform/CLAUDE.md` § Git Workflow verbatim, including
-"ship it", "sync it", and "release the gecko".
