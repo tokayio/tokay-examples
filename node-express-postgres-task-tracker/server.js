@@ -7,19 +7,21 @@ const port = Number(process.env.PORT || 3000);
 
 const tags = new Set(['permits', 'kitchen', 'marketing']);
 const statuses = new Set(['todo', 'doing', 'done']);
+// Due dates are days from the first launch, so the starter board always
+// looks like a launch in progress.
 const seedTasks = [
-  ['county-permit', 'Submit county food permit', 'permits', '2026-08-04', 'doing'],
-  ['fire-review', 'Book fire safety review', 'permits', '2026-08-08', 'todo'],
-  ['vendor-license', 'Confirm street vendor license', 'permits', '2026-08-11', 'todo'],
-  ['taco-test', 'Finish smoked mushroom taco test', 'kitchen', '2026-07-23', 'done'],
-  ['cooler', 'Buy the service line cooler', 'kitchen', '2026-07-27', 'doing'],
-  ['allergen-card', 'Print the allergen reference card', 'kitchen', '2026-07-29', 'todo'],
-  ['supplier-call', 'Confirm first produce delivery', 'kitchen', '2026-07-31', 'todo'],
-  ['menu-board', 'Approve the opening menu board', 'marketing', '2026-07-25', 'done'],
-  ['photo-day', 'Shoot menu photos at golden hour', 'marketing', '2026-08-02', 'todo'],
-  ['map-listing', 'Publish the weekly stop map', 'marketing', '2026-08-06', 'todo'],
-  ['opening-flyer', 'Send the opening day flyer', 'marketing', '2026-08-12', 'todo'],
-  ['friends-preview', 'Invite neighbors to the preview night', 'marketing', '2026-08-14', 'todo'],
+  ['county-permit', 'Submit county food permit', 'permits', 7, 'doing'],
+  ['fire-review', 'Book fire safety review', 'permits', 11, 'todo'],
+  ['vendor-license', 'Confirm street vendor license', 'permits', 14, 'todo'],
+  ['taco-test', 'Finish smoked mushroom taco test', 'kitchen', -5, 'done'],
+  ['cooler', 'Buy the service line cooler', 'kitchen', -1, 'doing'],
+  ['allergen-card', 'Print the allergen reference card', 'kitchen', 1, 'todo'],
+  ['supplier-call', 'Confirm first produce delivery', 'kitchen', 3, 'todo'],
+  ['menu-board', 'Approve the opening menu board', 'marketing', -3, 'done'],
+  ['photo-day', 'Shoot menu photos at golden hour', 'marketing', 5, 'todo'],
+  ['map-listing', 'Publish the weekly stop map', 'marketing', 9, 'todo'],
+  ['opening-flyer', 'Send the opening day flyer', 'marketing', 15, 'todo'],
+  ['friends-preview', 'Invite neighbors to the preview night', 'marketing', 17, 'todo'],
 ];
 
 app.use(express.json({ limit: '32kb' }));
@@ -65,12 +67,12 @@ const toTask = (row) => ({
 });
 
 async function seed() {
-  for (const [seedKey, title, tag, dueDate, status] of seedTasks) {
+  for (const [seedKey, title, tag, dueInDays, status] of seedTasks) {
     await pool.query(
       `insert into launch_tasks (seed_key, title, tag, due_date, status)
-       values ($1, $2, $3, $4, $5)
+       values ($1, $2, $3, current_date + $4::int, $5)
        on conflict (seed_key) do nothing`,
-      [seedKey, title, tag, dueDate, status],
+      [seedKey, title, tag, dueInDays, status],
     );
   }
 }

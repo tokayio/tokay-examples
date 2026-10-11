@@ -28,11 +28,11 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask your agent to deploy the dashboard with PostgreSQL, make the Service Private, create a Group for support staff, and confirm that a signed out visitor cannot reach Streamlit.
+5. Ask your agent to deploy the dashboard with PostgreSQL, make the Service Private, allow the support staff, and confirm that a signed out visitor cannot reach Streamlit.
 
 Never put the Tokay API token in this folder or in the deployed dashboard.
 
@@ -52,16 +52,14 @@ Never put the Tokay API token in this folder or in the deployed dashboard.
 
 ## Finish setup in Tokay
 
-The dashboard needs PostgreSQL to keep the ticket history and team notes. Open **Environment** and find `DATABASE_URL` under **From your infrastructure**. Choose **Confirm database**, keep the suggested `app` name, then choose **Confirm**.
+The dashboard needs PostgreSQL to keep the ticket history and team notes. Open **Environment** and find `DATABASE_URL` under **From your databases**. Choose **Confirm database**, keep the suggested `app` name, then choose **Confirm**.
 
 After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. Before sharing the finished Service URL, use the steps below to make the dashboard private.
 
 ## Make the dashboard private
 
-1. Beside the dashboard URL, change **Public** to **Private**.
-2. Open the Service **Access** tab and choose **Create group**. Name it `Support staff`.
-3. Add each support staff email or the company email domain.
-4. Choose **Done** to attach the Group to the Service. Visitors receive a magic link when they first open the dashboard.
+1. Change the dashboard from **Public** to **Private** beside its Service name.
+2. Open the **Access** tab. Under **Who can open it**, add each support staff email or your company email domain. Visitors receive a magic link when they first open the dashboard.
 
 Open the live URL in a signed out browser. Tokay starts the sign in flow before Streamlit appears.
 
@@ -77,11 +75,11 @@ You can build the whole interface with ordinary Streamlit components. Pandas sup
 
 The Alembic migration stays beside the app, and Tokay tests it against a copy before applying it. Fictional ticket history appears only when the tables are empty.
 
-The attached Group stops unapproved visitors before Streamlit handles their request. You can add a company email domain or specific people without changing Python code.
+Tokay stops unapproved visitors before Streamlit handles their request. You can add a company email domain or specific people without changing Python code.
 
 ## Secrets
 
-You do not need an application secret. Tokay supplies `DATABASE_URL`, and the Service's attached Group controls coworker access.
+You do not need an application secret. Tokay supplies `DATABASE_URL`, and the Service's access list controls who can open it.
 
 ## Grow from here
 

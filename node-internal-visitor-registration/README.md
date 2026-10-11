@@ -28,11 +28,11 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask your agent to deploy the app, make the Service Private for a staff Group, open the exact public path `/submit`, and prove that a guest registration survives another deployment.
+5. Ask your agent to deploy the app, make the Service Private for your staff, open the exact public path `/submit`, and prove that a guest registration survives another deployment.
 
 Never put the Tokay API token in this folder or in the deployed app.
 
@@ -54,10 +54,9 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 ## Keep the staff pages private
 
-1. Use the selector beside the visitor registration URL to make the Service **Private**.
-2. Open the Service **Access** tab and create a Group named `Staff`.
-3. Add each staff email or the company email domain, then choose **Done** to attach the Group.
-4. In **Public endpoints**, add `GET, POST` on `/submit`.
+1. Make the Service **Private** with the switch beside its name.
+2. Open the **Access** tab. Under **Who can open it**, add each staff email or your company email domain.
+3. Under **Open without sign-in**, add the path `/submit`.
 
 Use the exact path `/submit`. The rule `/submit/*` covers paths below it but does not include the form itself.
 
@@ -67,7 +66,7 @@ Use the exact path `/submit`. The rule `/submit/*` covers paths below it but doe
 2. Register a visit and check the confirmation page.
 3. Sign in to the root, find the **Guest link** entry, then deploy again. The registration is still in the staff history.
 
-The public rule covers `GET` and `POST` on `/submit`. The app still rejects every other method with `405`.
+Anyone can reach `/submit` without signing in. The app itself accepts only `GET` and `POST` there and answers every other method with `405`.
 
 ## How it works
 
@@ -75,11 +74,11 @@ You can safely expose the form because the server validates every field, limits 
 
 SQLite keeps the history through deployments and restarts. A few fictional visits appear only when the database is empty. Read [Files and persistent storage](https://tokay.io/docs/persistent-storage) to see how Tokay protects the file.
 
-Tokay checks the attached Groups before a request reaches Express. The public endpoint covers only `/submit`, while `/`, `/health`, and every other path remain Private.
+Tokay checks who is signed in before a request reaches Express. The public endpoint covers only `/submit`, while `/`, `/health`, and every other path remain Private.
 
 ## Secrets
 
-There are no application secrets. Service access, its Groups, and the public endpoint are Tokay settings.
+There are no application secrets. Service access and the path open without sign-in are Tokay settings.
 
 ## Grow from here
 

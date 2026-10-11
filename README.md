@@ -14,7 +14,7 @@ Each README tells you what the app needs, which choices to make in Tokay, and wh
 
 If your client supports remote MCP, connect it to the [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in, and ask your agent to deploy the example folder and prove its main feature without pasting a token.
 
-Otherwise, give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). To create a Tokay API token, open **You**, choose **API & MCP tokens**, then **New Token**, and save the token in your agent's secret store. Never put this token in the example or the deployed app.
+Otherwise, give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). To create a Tokay API token, open **You**, choose **API & MCP tokens**, then **New token**, and save the token in your agent's secret store. Never put this token in the example or the deployed app.
 
 ### Paste or upload
 
@@ -59,6 +59,7 @@ Complete any required setup on each Service's **Environment** page and follow th
 3. [Next.js event tickets](./node-nextjs-postgres-event-tickets) lets visitors reserve workshop tickets and can use Stripe test checkout when you are ready.
 4. [Django cat adoption](./python-django-postgres-cat-adoption) gives visitors search and gives you optional access to Django admin.
 5. [Laravel event space booking](./php-laravel-postgres-event-space-booking) accepts bookings and runs reminders on a separate schedule.
+6. [Prisma migrations walkthrough](./node-prisma-migrations-walkthrough) lets you see a safe schema change deploy automatically and review a destructive one before it runs.
 
 ## AI apps and integrations
 
@@ -85,11 +86,10 @@ Complete any required setup on each Service's **Environment** page and follow th
 3. [PDF statement queue](./node-express-bullmq-redis-statement-generator) lets you watch a Background Worker make statements while the web page reports progress.
 4. [WebSocket chat](./node-websocket-chat) gives everyone in a room live messages and presence from one long running process.
 
-## Persistent VM apps
+## Persistent storage and SQLite
 
 1. [Receipt box](./node-sqlite-uploads-receipt-box) keeps uploaded receipt images and their SQLite records together through another deployment.
 2. [PDF invoice generator](./python-pdf-invoice-generator) turns line items into a finished invoice and keeps recent PDFs ready to download.
-3. [Prisma migrations walkthrough](./node-prisma-migrations-walkthrough) lets you see a safe schema change deploy automatically and review a destructive one before it runs.
 
 ## Coworker and mixed access apps
 

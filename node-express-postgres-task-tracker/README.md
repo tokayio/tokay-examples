@@ -28,7 +28,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -55,7 +55,7 @@ Never put the Tokay API token in this folder or in the deployed app.
 The task tracker needs PostgreSQL to save your work. Tokay has already prepared the database setup based on the app. You only need to confirm where its `DATABASE_URL` should point.
 
 1. Open the Service and choose **Environment**.
-2. Under **From your infrastructure**, find `DATABASE_URL`.
+2. Under **From your databases**, find `DATABASE_URL`.
 3. Choose **Confirm database**.
 4. Keep the suggested `app` name.
 5. Choose **Confirm**.
@@ -71,7 +71,7 @@ The task tracker has everything it needs once its Service is connected to the `a
 export APP_URL="https://your-app.tokay.app"
 curl -X POST "$APP_URL/api/tasks" \
   -H 'Content-Type: application/json' \
-  -d '{"title":"Order compostable bowls","tag":"kitchen","dueDate":"2026-08-10","status":"todo"}'
+  -d '{"title":"Order compostable bowls","tag":"kitchen","dueDate":"2026-12-10","status":"todo"}'
 ```
 
 3. Refresh the board, then deploy again. Both changes remain because the page and API share PostgreSQL.

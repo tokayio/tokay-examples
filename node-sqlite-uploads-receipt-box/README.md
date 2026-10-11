@@ -1,4 +1,4 @@
-# Node SQLite uploads receipt box
+# Receipt box with SQLite and file uploads
 
 A receipt box keeps each uploaded image with its merchant, amount, category, and purchase date, then totals the selected month. Tokay runs it as one Web Service and preserves both the SQLite records and image files.
 
@@ -28,7 +28,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).

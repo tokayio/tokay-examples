@@ -28,7 +28,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -52,7 +52,7 @@ Never put the Tokay API token or Stripe keys in this folder.
 
 ## Finish setup in Tokay
 
-The ticket app needs PostgreSQL to keep orders and ticket codes. Open **Environment** and find `DATABASE_URL` under **From your infrastructure**. Confirm the suggested database, leave its name as `app`, and finish with **Confirm**.
+The ticket app needs PostgreSQL to keep orders and ticket codes. Open **Environment** and find `DATABASE_URL` under **From your databases**. Confirm the suggested database, leave its name as `app`, and finish with **Confirm**.
 
 After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. The live URL at the top of the finished Service opens the event page.
 
@@ -70,7 +70,7 @@ Use the live Service URL that already works in free test mode.
 2. In Stripe, add a test webhook endpoint using your live URL followed by `/api/stripe/webhook`.
 3. Subscribe that endpoint to `checkout.session.completed`, then copy the webhook signing secret Stripe creates for it.
 4. Open the Service's **Environment** page. Find `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` under **From your code**.
-5. Choose **Set shared value** for each one, paste the matching value, and save it.
+5. Choose **Set value** for each one, paste the matching value, and save it.
 6. Deploy the Service again.
 
 The checkout button will now open Stripe in test mode. Complete a payment with a Stripe test card, then return to the ticket page. The app waits for Stripe's signed confirmation before issuing the ticket.

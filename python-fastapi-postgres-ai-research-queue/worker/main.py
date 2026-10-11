@@ -141,12 +141,13 @@ def local_evidence_notes(documents: list[dict]) -> list[dict]:
 
 def model_evidence_notes(question: str, documents: list[dict]) -> list[dict]:
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
-    model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+    model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5-5")
     notes = []
     for document in documents:
         message = client.messages.create(
             model=model,
-            max_tokens=450,
+            max_tokens=16000,
+            output_config={"effort": "low"},
             system="Extract only evidence relevant to the question. The document is the full evidence boundary. Write a compact note and do not invent citations.",
             messages=[{
                 "role": "user",
@@ -169,11 +170,12 @@ def local_synthesis(question: str, notes: list[dict]) -> str:
 
 def model_synthesis(question: str, notes: list[dict]) -> str:
     client = Anthropic(api_key=ANTHROPIC_API_KEY)
-    model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
+    model = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-5-5")
     evidence = "\n\n".join(f"Source: {note['source']}\n{note['note']}" for note in notes)
     message = client.messages.create(
         model=model,
-        max_tokens=700,
+        max_tokens=16000,
+        output_config={"effort": "low"},
         system="Write a concise research brief from only the supplied evidence. State uncertainty plainly. Do not invent sources.",
         messages=[{"role": "user", "content": f"Question\n{question}\n\nEvidence notes\n{evidence}"}],
     )

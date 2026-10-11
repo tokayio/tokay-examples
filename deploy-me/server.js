@@ -22,7 +22,7 @@ database.exec(`
 const entryCount = database.prepare('SELECT COUNT(*) AS count FROM entries').get().count;
 if (entryCount === 0) {
   database.prepare('INSERT INTO entries (name, message) VALUES (?, ?)')
-    .run('Your host', 'Welcome. Sign below.');
+    .run('Your host', 'Welcome. Leave a note for the next visitor.');
 }
 
 app.use(express.urlencoded({ extended: false }));
@@ -89,7 +89,7 @@ const page = ({ error = '', draft = {} } = {}) => {
     </form>
     <p class="count">${entries.length} ${entries.length === 1 ? 'entry' : 'entries'}</p>
     <section class="entries">${cards}</section>
-    <p class="boot">Running since ${escapeHtml(bootedAt.toISOString())}</p>
+    <p class="boot">This version started ${escapeHtml(bootedAt.toUTCString())}</p>
   </main>
 </body>
 </html>`;
