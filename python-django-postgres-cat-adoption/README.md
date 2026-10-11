@@ -38,7 +38,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token and `SECRET_KEY` in their secret store, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store beside the `SECRET_KEY` you generated.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -64,8 +64,8 @@ Never put either secret in this folder or in the deployed source.
 
 Choose **Environment** on the directory Service.
 
-1. Under **From your code**, find `SECRET_KEY`. Choose **Set shared value**, paste the value you generated, and save it. Future deployments will use the same encrypted Project Secret.
-2. Find `DATABASE_URL` under **From your infrastructure**. Confirm the database, leave `app` as its name, and save the choice.
+1. Under **From your code**, find `SECRET_KEY`. Choose **Set value**, paste the value you generated, and save it. Future deployments will use the same encrypted Project Secret.
+2. Find `DATABASE_URL` under **From your databases**. Confirm the database, leave `app` as its name, and save the choice.
 3. After saving `SECRET_KEY` and connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. The finished Service's live URL opens the directory.
 
 ## Try it
@@ -76,7 +76,7 @@ Choose **Environment** on the directory Service.
 
 ## Turn on the admin
 
-Open the Service's **Environment** page. Find `ADMIN_PASSWORD` under **From your code**, choose **Set shared value**, then deploy again. Sign in at `/admin/` with username `shelter-admin` and the password you set. Change a cat's status, then return to the directory to see the update.
+Open the Service's **Environment** page. Find `ADMIN_PASSWORD` under **From your code**, choose **Set value**, then deploy again. Sign in at `/admin/` with username `shelter-admin` and the password you set. Change a cat's status, then return to the directory to see the update.
 
 You choose the admin password. The app never generates or prints one in the logs.
 

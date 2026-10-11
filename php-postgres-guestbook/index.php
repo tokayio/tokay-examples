@@ -56,7 +56,7 @@ try {
     $count = (int) $db->query('SELECT COUNT(*) FROM guestbook_entries')->fetchColumn();
     if ($count === 0) {
         $seed = $db->prepare('INSERT INTO guestbook_entries (name, message) VALUES (:name, :message)');
-        $seed->execute(['name' => 'Your host', 'message' => 'Welcome. Sign below.']);
+        $seed->execute(['name' => 'Your host', 'message' => 'Welcome. Leave a note for the next visitor.']);
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && $path === '/sign') {
@@ -77,7 +77,7 @@ try {
     }
 
     $entries = $db->query(<<<'SQL'
-        SELECT name, message, created_at AT TIME ZONE 'UTC' AS created_at
+        SELECT name, message, to_char(created_at AT TIME ZONE 'UTC', 'YYYY-MM-DD HH24:MI') AS created_at
         FROM guestbook_entries
         ORDER BY id DESC
         SQL)->fetchAll();

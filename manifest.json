@@ -5,7 +5,7 @@
     "AI apps and integrations",
     "Automations and scheduled work",
     "Bots, workers, and realtime apps",
-    "Persistent VM apps",
+    "Persistent storage and SQLite",
     "Coworker and mixed access apps"
   ],
   "examples": [

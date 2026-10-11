@@ -29,7 +29,7 @@ Your agent needs a Tokay API token to create the deployment. The running app sep
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Save the Tokay token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -55,8 +55,8 @@ If you want your agent to finish the setup, save your OpenRouter key in their se
 
 1. Create a key on the [OpenRouter keys page](https://openrouter.ai/settings/keys).
 2. Choose a model from the [OpenRouter model list](https://openrouter.ai/models) and copy its full slug, such as `provider/model-name`.
-3. On the Service page, open **Environment** and find `OPENROUTER_API_KEY` under **From your code**. Choose **Set shared value**, keep **Visibility** on **Secret**, and save the key.
-4. Find `OPENROUTER_MODEL` and choose **Set shared value**. Change **Visibility** to **Config**, paste the model slug, and save it.
+3. On the Service page, open **Environment** and find `OPENROUTER_API_KEY` under **From your code**. Choose **Set value**, paste the key, and save it. Leave **Keep it readable** unchecked so the key stays a Secret.
+4. Find `OPENROUTER_MODEL` and choose **Set value**. Paste the model slug, check **Keep it readable** so it is stored as Config, and save it.
 
 After saving the OpenRouter key and model, continue the deployment and choose **Go Live** if prompted. The live URL at the top of the Service opens the chat.
 

@@ -16,7 +16,7 @@
     </section>
     {% if report %}
       <section class="report">
-        <div class="report-head"><div><p>Report for</p><h2>{{ report.report_date.strftime('%A, %B %-d') }}</h2></div><a href="/">All reports</a></div>
+        <div class="report-head"><div><p>Report for</p><h2>{{ report.report_date.strftime('%A, %B %-d') }}</h2></div>{% if request.path != '/' %}<a href="/">Latest report</a>{% endif %}</div>
         <div class="metrics">
           <article><span>Revenue</span><strong>${{ '%.2f'|format(report.revenue_cents / 100) }}</strong></article>
           <article><span>Orders</span><strong>{{ report.order_count }}</strong></article>

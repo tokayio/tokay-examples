@@ -28,11 +28,11 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask your agent to deploy the watcher with cron `0 */6 * * *`, run it once, and confirm that `last-price.png` appears under **Saved Files**.
+5. Ask your agent to deploy the watcher with cron `0 */6 * * *`, run it once, and download `last-price.png` from the Service's saved files.
 
 Never put the Tokay API token in this folder or in the deployed Service.
 
@@ -48,13 +48,13 @@ Choose **Add code**, then **Git**. Create a repository, follow the Git setup com
 
 ## Try it
 
-1. Choose **Run Now**, then download `last-price.png` from **Saved Files**.
+1. Choose **Run Now** and read the observed price in the run result. Ask your agent to download `last-price.png` if you want the screenshot.
 2. Note the history count in the run result and deploy the same code again.
 3. Run it once more. The screenshot is refreshed and the count grows in the preserved database.
 
 ## Watch another price
 
-Open the Service's **Environment** page and find `WATCH_URL` under **From your code**. Choose **Set shared value** and enter the public product page. Set `WATCH_SELECTOR` the same way with a CSS selector for the visible price. Add `TARGET_PRICE` if you want an alert when the price crosses that number.
+Open the Service's **Environment** page and find `WATCH_URL` under **From your code**. Choose **Set value** and enter the public product page. Set `WATCH_SELECTOR` the same way with a CSS selector for the visible price. Add `TARGET_PRICE` if you want an alert when the price crosses that number.
 
 Set `ALERT_WEBHOOK_URL` to a Slack or Discord incoming webhook if you want alerts sent outside Tokay. A price change always alerts. Crossing the target adds a second reason to the same message.
 

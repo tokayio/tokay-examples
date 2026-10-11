@@ -1,6 +1,6 @@
 # Node Claude streaming chat
 
-A Claude chat page streams answers from `claude-sonnet-4-6`, preserves context for follow up questions, and renders model Markdown safely. Tokay runs the Node.js app as one Web Service with your Anthropic key stored as a Secret.
+A Claude chat page streams answers from `claude-sonnet-5-5`, preserves context for follow up questions, and renders model Markdown safely. Tokay runs the Node.js app as one Web Service with your Anthropic key stored as a Secret.
 
 Use this project to follow Anthropic's Messages API from a browser conversation through the SDK stream and back. The interface stays useful while the private credential never reaches client code.
 
@@ -30,7 +30,7 @@ Your agent needs a Tokay API token to create the deployment. The running app sep
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Save the Tokay token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -54,7 +54,7 @@ If you want your agent to finish the setup, save your Anthropic key in their sec
 
 ## Add your Anthropic API key
 
-Create a key in the [Anthropic Console](https://console.anthropic.com/settings/keys). On the Service page, open **Environment** and find `ANTHROPIC_API_KEY` under **From your code**. Choose **Set shared value**, leave it marked **Secret**, and save the Anthropic key.
+Create a key in the [Anthropic Console](https://console.anthropic.com/settings/keys). On the Service page, open **Environment** and find `ANTHROPIC_API_KEY` under **From your code**. Choose **Set value**, paste the Anthropic key, and save it as a Secret.
 
 After saving the Anthropic key, continue the deployment and choose **Go Live** if prompted. Then open Claude from the Service URL.
 
