@@ -27,7 +27,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -54,7 +54,7 @@ Never put the Tokay API token in this folder or in the deployed app.
 The guestbook needs PostgreSQL to keep its messages. Tokay has already prepared the database setup based on the app. You only need to confirm where `DATABASE_URL` should point.
 
 1. Choose **Environment** from the guestbook Service.
-2. Find `DATABASE_URL` under **From your infrastructure**.
+2. Find `DATABASE_URL` under **From your databases**.
 3. Choose **Confirm database**.
 4. Keep the suggested `app` name.
 5. Choose **Confirm**.

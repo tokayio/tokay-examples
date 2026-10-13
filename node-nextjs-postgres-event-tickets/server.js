@@ -4,6 +4,16 @@ const { Pool } = require("pg");
 
 const eventId = "e09c2c50-8dd6-4f20-83e3-24c0b6c7c012";
 
+// The demo workshop is always about a month away. A date that has already
+// passed moves forward on the next start, so the page never sells a past event.
+function nextWorkshopDate() {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() + 30);
+  date.setUTCDate(date.getUTCDate() + ((6 - date.getUTCDay() + 7) % 7));
+  date.setUTCHours(18, 0, 0, 0);
+  return date.toISOString();
+}
+
 async function seedEvent() {
   const pool = new Pool({ connectionString: process.env.DATABASE_URL });
   try {
@@ -14,7 +24,7 @@ async function seedEvent() {
          name = EXCLUDED.name,
          description = EXCLUDED.description,
          venue = EXCLUDED.venue,
-         starts_at = EXCLUDED.starts_at,
+         starts_at = CASE WHEN events.starts_at < now() THEN EXCLUDED.starts_at ELSE events.starts_at END,
          price_cents = EXCLUDED.price_cents,
          capacity = EXCLUDED.capacity`,
       [
@@ -22,7 +32,7 @@ async function seedEvent() {
         "Make a Book by Hand",
         "Spend one generous afternoon folding, stitching, and casing a clothbound notebook. Materials, tea, and a patient first lesson are included.",
         "North Window Workshop",
-        "2026-10-17T18:00:00.000Z",
+        nextWorkshopDate(),
         4800,
         120,
       ],

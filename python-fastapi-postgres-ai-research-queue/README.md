@@ -28,7 +28,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -41,7 +41,7 @@ If you want real model synthesis, save your Anthropic key in your agent's secret
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**. Tokay detects exactly one Web Service in `web` and one Background Worker in `worker`.
 3. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
-4. Open each Service's **Environment** page. Under **From your infrastructure**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the page and worker use the same jobs and checkpoints.
+4. Open each Service's **Environment** page. Under **From your databases**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the page and worker use the same jobs and checkpoints.
 5. Check that only the Web Service shows the Alembic migration. This keeps the database change from running twice.
 6. Continue the deployment and choose **Go Live** if prompted. When the Web Service is live, open the research queue from its URL.
 
@@ -61,7 +61,7 @@ If you want real model synthesis, save your Anthropic key in your agent's secret
 
 ## Add real model synthesis
 
-Open the Background Worker's **Environment** page and find `ANTHROPIC_API_KEY` under **From your code**. Choose **Set shared value**, paste your key, and save it. Deploy the Background Worker again.
+Open the Background Worker's **Environment** page and find `ANTHROPIC_API_KEY` under **From your code**. Choose **Set value**, paste your key, and save it. Deploy the Background Worker again.
 
 New jobs now call Anthropic once for each bundled document and once for the final synthesis. The result badge changes to **Anthropic**. The page keeps showing saved progress while those model calls run.
 

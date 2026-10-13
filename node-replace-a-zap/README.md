@@ -1,4 +1,4 @@
-# Node replace a Zap
+# Replace a Zap with Node.js
 
 A lead intake workflow accepts form submissions, routes urgent and event requests, rejects duplicates, and builds a daily digest with a JSON archive. Tokay runs the receiver as a Function and the digest as a Scheduled Service over one PostgreSQL database.
 
@@ -16,7 +16,7 @@ Send a name, email, service, and optional notes to `/submit`. The response tells
 
 Repeat the same duplicate key and PostgreSQL keeps one lead while reporting the second request as a duplicate.
 
-When the digest runs, its result counts each route and lists the last 24 hours of requests. **Saved Files** keeps a complete JSON archive for every run.
+When the digest runs, its result counts each route and lists the last 24 hours of requests. A complete JSON archive for every run stays in the Service's saved files, where your agent can download it.
 
 ## Deploy with your agent
 
@@ -27,7 +27,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -41,7 +41,7 @@ Never put the Tokay API token in this folder or in either deployed Service.
 2. Upload this whole folder and choose **Analyze**. Tokay detects a Function in `receiver` and a Scheduled Service in `digest`.
 3. Enter `every day at 8am` in the digest's **Schedule** field, then check the upcoming runs and timezone.
 4. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
-5. Open each Service's **Environment** page. Under **From your infrastructure**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the receiver and digest use the same data.
+5. Open each Service's **Environment** page. Under **From your databases**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the receiver and digest use the same data.
 6. Continue the deployment and choose **Go Live** if prompted.
 
 ## Push with Git
@@ -65,7 +65,7 @@ curl -X POST "$FUNCTION_URL/submit" \
 ```
 
 2. Send the same command again and confirm the response now reports a duplicate.
-3. Choose **Run Now** on the digest Service. Mira appears once under `priority`, and the archive is available in **Saved Files**.
+3. Choose **Run Now** on the digest Service. Mira appears once under `priority` in the run result.
 
 ## How it works
 

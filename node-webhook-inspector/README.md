@@ -12,7 +12,7 @@ https://tokay.io/examples/downloads/node-webhook-inspector.zip.
 
 ## What it does
 
-Press **Send Test Event** and the request appears under **Requests** with the Function's JSON response and matching log line.
+Press **Send test event** and the request appears under **Requests** with the Function's JSON response and matching log line.
 
 Send a payload containing an email and message and the handler labels it `form lead`. An `order.created` event receives `new order`, while anything else receives `general`.
 
@@ -27,7 +27,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -41,7 +41,7 @@ Never put the Tokay API token in this folder or in the deployed Function.
 2. Upload this whole folder and choose **Analyze**.
 3. Tokay detects one Function. Choose a Project, then choose **Deploy**.
 4. Continue the deployment and choose **Go Live** if prompted.
-5. When the Service status says **Live**, choose **Send Test Event**.
+5. When the Service status says **Live**, choose **Send test event**.
 
 ## Push with Git
 
@@ -49,7 +49,7 @@ Never put the Tokay API token in this folder or in the deployed Function.
 2. Create a repository and follow the Git setup commands shown by Tokay.
 3. Push this folder, then choose the detected Function and a Project. Choose **Deploy**.
 4. Continue the deployment and choose **Go Live** if prompted.
-5. When the Service status says **Live**, choose **Send Test Event**.
+5. When the Service status says **Live**, choose **Send test event**.
 
 ## Try it
 
@@ -67,11 +67,11 @@ curl -X POST "$FUNCTION_URL/hooks/forms" \
 
 ## Turn on signature checks
 
-When you are ready to reject unsigned requests, open the Function's **Environment** page and find `WEBHOOK_SECRET` under **From your code**. Choose **Set shared value**, save the secret, and deploy again.
+When you are ready to reject unsigned requests, open the Function's **Environment** page and find `WEBHOOK_SECRET` under **From your code**. Choose **Set value**, save the secret, and deploy again.
 
 Generic senders can put the lowercase HMAC SHA256 digest in `x-webhook-signature`, with or without the `sha256=` prefix. Stripe style signatures with `t` and `v1` fields work too.
 
-Unsigned or invalid requests now return 401. **Send Test Event** is unsigned, so use that button before adding the secret. Afterward, replay a signed request from your provider.
+Unsigned or invalid requests now return 401. **Send test event** is unsigned, so use that button before adding the secret. Afterward, replay a signed request from your provider.
 
 ## How it works
 

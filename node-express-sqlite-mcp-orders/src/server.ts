@@ -262,7 +262,7 @@ app.get("/", (_request, response) => {
 
     <section>
       <h2>Connect a headless agent</h2>
-      <p>Create a Machine, put it in a Group attached to this Service, make the Service Private, and pass the Machine credential as a bearer header.</p>
+      <p>Allow a Machine on this Service, make the Service Private, and pass the Machine credential as a bearer header.</p>
       <pre><code id="claude-private"></code></pre>
       <h3>Optional public smoke test</h3>
       <p>Before making the Service Private, you can verify the MCP handshake without a credential.</p>

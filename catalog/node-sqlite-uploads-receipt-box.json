@@ -1,5 +1,5 @@
 {
-  "category": "Persistent VM apps",
+  "category": "Persistent storage and SQLite",
   "runtime": "Node.js",
   "framework": "Express",
   "serviceTypes": ["web"],
