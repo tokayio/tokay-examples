@@ -1,4 +1,4 @@
-# Deploy a remote MCP server with OAuth
+# Remote MCP server with OAuth
 
 A personal task inbox lets each visitor connect an MCP client, authorize with their email, and manage only their own saved tasks. Tokay runs the Express and SQLite app as one Web Service and supplies the OAuth layer around it.
 
@@ -28,7 +28,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -56,10 +56,8 @@ The Tokay API token manages the deployment. It is not the OAuth token used by MC
 
 OAuth is automatic for Private Tokay apps. There are no client IDs, callback URLs, OAuth secrets, or environment variables to configure in this project.
 
-1. Beside the MCP Service URL, change **Public** to **Private**.
-2. Open the Service **Access** tab and choose **Create group**. Name it `Visitors`.
-3. Add the email of each visitor who should connect.
-4. Choose **Done** to attach the Group to the Service.
+1. Switch the Service from **Public** to **Private** with the control beside its name.
+2. Open the **Access** tab. Under **Who can open it**, add the email of each visitor who should connect.
 
 Private Services automatically publish the standard MCP metadata for protected resources and OAuth authorization servers. Each visitor signs in and approves their own connection. The builder does not mint a token on their behalf.
 

@@ -40,7 +40,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token and the Discord bot token in their secret store, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Save the Tokay token and Discord bot token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -64,7 +64,7 @@ The Tokay token lets your agent deploy. The Discord token lets the running bot c
 
 ## Add the Discord token
 
-Open **Environment** and find `DISCORD_TOKEN` under **From your code**. Choose **Set shared value**, paste the bot token, and save it.
+Open **Environment** and find `DISCORD_TOKEN` under **From your code**. Choose **Set value**, paste the bot token, and save it.
 
 After saving the bot token, continue the deployment and choose **Go Live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
 

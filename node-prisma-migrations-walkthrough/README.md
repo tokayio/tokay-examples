@@ -46,7 +46,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this guide and the Tokay examples GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -61,7 +61,7 @@ Paste or upload is a quick way to try the prepared `v1` folder, but it cannot ca
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload the prepared `prisma-walkthrough` folder and choose **Analyze**.
 3. Review the detected Web Service, choose a Project, then choose **Deploy**.
-4. On the Service page, open **Environment**. Find `DATABASE_URL` under **From your infrastructure**, choose **Confirm database**, keep `app`, then choose **Confirm**.
+4. On the Service page, open **Environment**. Find `DATABASE_URL` under **From your databases**, choose **Confirm database**, keep `app`, then choose **Confirm**.
 5. After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted.
 
 ## Start the walkthrough with v1

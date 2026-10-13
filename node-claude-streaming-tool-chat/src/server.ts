@@ -5,10 +5,11 @@ const app = express();
 app.use(express.json({ limit: "10mb" }));
 
 const anthropicApiKey = process.env.ANTHROPIC_API_KEY?.trim() || "";
-const model = "claude-sonnet-4-6";
-const modelName = "Claude Sonnet 4.6";
+const model = "claude-sonnet-5-5";
+const modelName = "Claude Sonnet 5.5";
 const modelContextLength = 1_000_000;
-const outputTokenLimit = 1_000;
+// Sonnet 5.5 thinks before it answers, and thinking counts toward this limit.
+const outputTokenLimit = 16_000;
 const systemPrompt = "You are a concise, helpful assistant. Answer the user's question directly and clearly.";
 
 type ConversationMessage = {
@@ -47,6 +48,8 @@ const streamClaudeAnswer = async (
   const stream = client.messages.stream({
     model,
     max_tokens: outputTokenLimit,
+    // Low effort keeps a chat turn quick; raise it for harder questions.
+    output_config: { effort: "low" },
     system: systemPrompt,
     messages
   });
@@ -71,6 +74,9 @@ const streamClaudeAnswer = async (
   });
 
   const stopReason: string | null = finalMessage.stop_reason;
+  if (stopReason === "refusal") {
+    throw new Error(`${modelName} declined this request. Try rephrasing it or start a new chat.`);
+  }
   if (stopReason === "max_tokens") {
     throw new Error(`${modelName} reached this demo's output limit. Ask for a shorter answer.`);
   }

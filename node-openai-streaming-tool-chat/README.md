@@ -30,7 +30,7 @@ Your agent needs a Tokay API token to create the deployment. The running app sep
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Save the Tokay token in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -54,7 +54,7 @@ If you want your agent to finish the setup, save your OpenAI key in their secret
 
 ## Add your OpenAI API key
 
-Create a key on the [OpenAI API keys page](https://platform.openai.com/api-keys). On the Service page, open **Environment** and find `OPENAI_API_KEY` under **From your code**. Choose **Set shared value**, confirm **Secret** visibility, and store the key.
+Create a key on the [OpenAI API keys page](https://platform.openai.com/api-keys). On the Service page, open **Environment** and find `OPENAI_API_KEY` under **From your code**. Choose **Set value**, and store the key. Tokay keeps it encrypted.
 
 After saving the OpenAI key, continue the deployment and choose **Go Live** if prompted. Then use the Service's live URL to start chatting.
 

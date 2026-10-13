@@ -1,5 +1,5 @@
 {
-  "category": "Persistent VM apps",
+  "category": "Persistent storage and SQLite",
   "runtime": "Python",
   "framework": "FastAPI and WeasyPrint",
   "serviceTypes": ["web"],

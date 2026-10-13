@@ -38,7 +38,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token and `APP_KEY` in their secret store, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store beside the `APP_KEY` you generated.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -64,7 +64,7 @@ Never put either secret in this folder or in the deployed source.
 
 On the Project page, choose **Environment**. Find the `APP_KEY` setup item, choose **Set value**, paste the value you generated, and save it. Both Services will use this same encrypted value.
 
-Next, open each Service's **Environment** page. Under **From your infrastructure**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so each one receives the same Project resource and logical database.
+Next, open each Service's **Environment** page. Under **From your databases**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so each one receives the same Project resource and logical database.
 
 After saving `APP_KEY` and connecting both Services to the `app` database, continue the deployment and choose **Go Live** if prompted. When the Web Service is live, open the booking page from its URL.
 

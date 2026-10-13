@@ -64,7 +64,7 @@ def index():
         reports = connection.execute(
             "SELECT * FROM daily_reports ORDER BY report_date DESC LIMIT 45"
         ).fetchall()
-    return render_template("reports.html", reports=reports, report=None)
+    return render_template("reports.html", reports=reports, report=reports[0] if reports else None)
 
 
 @app.get("/reports/<report_date>")

@@ -1,4 +1,4 @@
-# Node Vite React Express PostgreSQL watchlist
+# Movie watchlist with React, Express, and PostgreSQL
 
 A React watchlist lets you plan movie and show nights through an Express JSON API backed by PostgreSQL. Tokay runs the frontend and API together as one Web Service.
 
@@ -30,7 +30,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -54,7 +54,7 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 ## Finish setup in Tokay
 
-The watchlist needs PostgreSQL to keep your recommendations. Open **Environment**, find `DATABASE_URL` under **From your infrastructure**, and choose **Confirm database**. Keep `app`, then choose **Confirm**.
+The watchlist needs PostgreSQL to keep your recommendations. Open **Environment**, find `DATABASE_URL` under **From your databases**, and choose **Confirm database**. Keep `app`, then choose **Confirm**.
 
 Database setup for the watchlist is complete after its Service connects to `app`. Tokay tests the database migration against a copy before release. Choose **Go Live** if prompted. When the Service is live, open the watchlist from its URL.
 

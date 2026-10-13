@@ -1,5 +1,5 @@
 {
-  "category": "Persistent VM apps",
+  "category": "Websites, apps, and APIs",
   "runtime": "Node.js",
   "framework": "Express and Prisma",
   "serviceTypes": ["web"],

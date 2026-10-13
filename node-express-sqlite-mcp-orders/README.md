@@ -1,4 +1,4 @@
-# Deploy a private sales analytics MCP server
+# Private sales analytics MCP server
 
 A sales analytics MCP server lets your AI agent summarize revenue, find customers, inspect recent orders, and rank products without opening the whole database. Tokay runs it as one Web Service with durable SQLite storage and optional Machine access.
 
@@ -28,7 +28,7 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
@@ -60,12 +60,11 @@ If you want to test the tools without a model, use the MCP Inspector command sho
 
 ## Connect your headless agent with a Machine credential
 
-1. Open the Project **Audience** page and choose **Machines**, then **New Machine**. Name it `claude-orders`.
-2. On the new Machine, choose **Issue credential**. Name it `claude-code`, choose **Issue credential**, and copy the full value from the next dialog. Save it now because Tokay shows it once.
-3. Open the Service **Access** tab and create a Group named `Agents`. Add `claude-orders`, then choose **Done** to attach the Group.
-4. On the Service page beside the URL, change **Public** to **Private**.
-5. Run the private Claude Code command shown on the app's landing page. Replace `<machine-credential>` with the value you just copied.
-6. Ask Claude `What sold best in the last 30 days?` Then check **Access log** in Tokay to see the Machine and credential used.
+1. On the Service page, open the **Access** tab. Under **Who can open it**, choose **New Machine**, name it `claude-orders`, and choose **Create Machine**.
+2. Tokay allows the Machine on this Service and shows its first token. Copy the full value now because Tokay shows it once.
+3. Beside the Service name, switch **Public** to **Private**.
+4. Run the private Claude Code command shown on the app's landing page. Replace `<machine-credential>` with the token you just copied.
+5. Ask Claude `What sold best in the last 30 days?` Then open **Access** in the sidebar and choose **Who went where** to see the Machine and credential used.
 
 This Machine credential only lets a program call the private app. It cannot deploy code or manage Tokay.
 
@@ -75,11 +74,11 @@ The Machine represents your automation, not a person. You can revoke its credent
 
 You can replace a credential without creating another Machine or splitting its access history.
 
-1. Issue a second credential from `claude-orders` and name it `claude-code-2`.
+1. Open **Access**, choose **Machines**, then `claude-orders`. Choose **Issue a credential**, name it `claude-code-2`, and choose **Issue credential**.
 2. Update your MCP client to use the new value, then call `sales_summary` again.
-3. Revoke the original `claude-code` credential.
+3. Revoke the original credential.
 4. Confirm the old value is denied while `claude-code-2` still works.
-5. Open **Access log**. Both calls remain under `claude-orders`, and each one names the credential used.
+5. Open **Who went where**. Both calls remain under `claude-orders`, and each one names the credential used.
 
 ## Try it
 
@@ -95,7 +94,7 @@ The app adds its fictional order history only when the SQLite database is empty.
 
 ## Secrets
 
-You do not need a Project Secret. Private access uses a Machine credential placed in an attached Group, while Public smoke tests need no credential.
+You do not need a Project Secret. Private access uses a Machine credential allowed on the Service, while Public smoke tests need no credential.
 
 ## Grow from here
 

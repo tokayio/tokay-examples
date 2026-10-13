@@ -27,11 +27,11 @@ follow the API token steps below.
 
 If your agent already has a Tokay API token, start at step 3.
 
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New Token**.
+1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
 2. Copy the token when it appears and save it in your agent's secret store.
 3. Give your agent this folder or the example's GitHub URL.
 4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask your agent to deploy the monitor with cron `*/5 * * * *`, run it twice, and confirm that `uptime.sqlite3` appears under **Saved Files**.
+5. Ask your agent to deploy the monitor with cron `*/5 * * * *`, run it twice, and confirm that `total_checks` keeps growing across runs.
 
 Never put the Tokay API token in this folder or in the deployed Service.
 
@@ -47,13 +47,12 @@ Choose **Add code**, then **Git**. Create a repository, follow the Git setup com
 
 ## Try it
 
-1. Choose **Run Now** twice and compare the accumulated row count in both results.
-2. Open **Saved Files** and confirm that `uptime.sqlite3` is present.
-3. Deploy again and run one more check. The count continues from the same database.
+1. Choose **Run Now** twice. `total_checks` in the second result counts both runs because the rows live in `uptime.sqlite3`, saved with the Service.
+2. Deploy again and run one more check. The count continues from the same database.
 
 ## Watch your own site
 
-Open the Service's **Environment** page and find `MONITOR_URLS` under **From your code**. Choose **Set shared value** and enter one URL or a comma separated list. If you leave off the scheme, the monitor uses `https`.
+Open the Service's **Environment** page and find `MONITOR_URLS` under **From your code**. Choose **Set value** and enter one URL or a comma separated list. If you leave off the scheme, the monitor uses `https`.
 
 The first check records the starting state. A later change writes an `ALERT` line, so healthy runs and an unchanged outage do not keep notifying you.
 
