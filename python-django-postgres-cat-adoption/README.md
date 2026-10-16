@@ -50,14 +50,14 @@ Never put either secret in this folder or in the deployed source.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the secret and database steps below so the deployment can continue.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the secret and database steps below so the deployment can continue.
 
 ## Finish setup in Tokay
@@ -66,7 +66,7 @@ Choose **Environment** on the directory Service.
 
 1. Under **From your code**, find `SECRET_KEY`. Choose **Set value**, paste the value you generated, and save it. Future deployments will use the same encrypted Project Secret.
 2. Find `DATABASE_URL` under **From your databases**. Confirm the database, leave `app` as its name, and save the choice.
-3. After saving `SECRET_KEY` and connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. The finished Service's live URL opens the directory.
+3. After saving `SECRET_KEY` and connecting the Service to the `app` database, continue the deployment and choose **Go live** if prompted. The finished Service's live URL opens the directory.
 
 ## Try it
 

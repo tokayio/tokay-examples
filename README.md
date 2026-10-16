@@ -18,15 +18,15 @@ Otherwise, give your agent the example folder and [Tokay's agent instructions](h
 
 ### Paste or upload
 
-Open Tokay and choose **Add code**, then **Paste or upload**. Upload the example folder and choose **Analyze**. Tokay shows you the Services the app needs and any choices that require your attention. Choose a Project, then use **Deploy**, **Test & Schedule**, or **Deploy 2 Services** as directed by the example README.
+Open Tokay and choose **Add code**, then **Paste or upload**. Upload the example folder and choose **Analyze**. Tokay shows you the Services the app needs and any choices that require your attention. Choose a Project, then use **Go live**, **Test & schedule**, or **Go live with 2 services** as directed by the example README.
 
-Complete any required setup on each Service's **Environment** page, then follow the deployment tracker. If **Go Live** appears, choose it. The example README tells you what to open or run to confirm the result.
+Complete any required setup on each Service's **Environment** page, then follow the deployment tracker. If **Go live** appears, choose it. The example README tells you what to open or run to confirm the result.
 
 ### Push with Git
 
-Open Tokay and choose **Add code**, then **Git**. Create a repository and follow the Git setup commands shown by Tokay. Push the example folder, then choose the detected Services and a Project. Use **Deploy**, **Test & Schedule**, or **Deploy 2 Services** as directed by the example README.
+Open Tokay and choose **Add code**, then **Git**. Create a repository and follow the Git setup commands shown by Tokay. Push the example folder, choose **Configure service**, then choose a Project. Use **Go live**, **Test & schedule**, or **Go live with 2 services** as directed by the example README.
 
-Complete any required setup on each Service's **Environment** page and follow the deployment tracker. If **Go Live** appears, choose it. Once the Service is live, follow its README to try the main feature.
+Complete any required setup on each Service's **Environment** page and follow the deployment tracker. If **Go live** appears, choose it. Once the Service is live, follow its README to try the main feature.
 
 ## Featured examples
 

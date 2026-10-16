@@ -40,21 +40,21 @@ Never put the Tokay API token or Stripe keys in this folder.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Finish setup in Tokay
 
 The ticket app needs PostgreSQL to keep orders and ticket codes. Open **Environment** and find `DATABASE_URL` under **From your databases**. Confirm the suggested database, leave its name as `app`, and finish with **Confirm**.
 
-After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted. The live URL at the top of the finished Service opens the event page.
+After connecting the Service to the `app` database, continue the deployment and choose **Go live** if prompted. The live URL at the top of the finished Service opens the event page.
 
 ## Try it
 

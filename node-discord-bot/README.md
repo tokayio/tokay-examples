@@ -52,21 +52,21 @@ The Tokay token lets your agent deploy. The Discord token lets the running bot c
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload `bot.js` and `package.json`, then choose **Analyze**.
-3. Tokay detects one Background Worker. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Background Worker. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add the Discord token using the steps below.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Background Worker and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add the Discord token using the steps below.
 
 ## Add the Discord token
 
 Open **Environment** and find `DISCORD_TOKEN` under **From your code**. Choose **Set value**, paste the bot token, and save it.
 
-After saving the bot token, continue the deployment and choose **Go Live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
+After saving the bot token, continue the deployment and choose **Go live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
 
 ## Try it
 

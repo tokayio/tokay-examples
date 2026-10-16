@@ -41,14 +41,14 @@ If you want your agent to finish the setup, save your OpenRouter key in their se
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add the OpenRouter values using the steps below.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add the OpenRouter values using the steps below.
 
 ## Add your OpenRouter key and model
@@ -58,7 +58,7 @@ If you want your agent to finish the setup, save your OpenRouter key in their se
 3. On the Service page, open **Environment** and find `OPENROUTER_API_KEY` under **From your code**. Choose **Set value**, paste the key, and save it. Leave **Keep it readable** unchecked so the key stays a Secret.
 4. Find `OPENROUTER_MODEL` and choose **Set value**. Paste the model slug, check **Keep it readable** so it is stored as Config, and save it.
 
-After saving the OpenRouter key and model, continue the deployment and choose **Go Live** if prompted. The live URL at the top of the Service opens the chat.
+After saving the OpenRouter key and model, continue the deployment and choose **Go live** if prompted. The live URL at the top of the Service opens the chat.
 
 ## Try it
 

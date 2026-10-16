@@ -1,6 +1,6 @@
 # Python Playwright price watcher
 
-A browser based price watcher reads a visible price, saves a full page screenshot, and alerts when the value changes or crosses your target. Tokay runs Chromium inside a Scheduled Service and keeps the history files between deployments.
+A browser based price watcher reads a visible price, saves a full page screenshot, and alerts when the value changes or crosses your target. Tokay runs Chromium inside a Scheduled Job and keeps the history files between deployments.
 
 The default check uses Tokay's public pricing page, so you can prove the browser and selector before choosing a product. After that, Config changes the URL and CSS selector without a code edit.
 
@@ -38,13 +38,13 @@ Never put the Tokay API token in this folder or in the deployed Service.
 
 ## Paste or upload
 
-Open Tokay and choose **Add code**, then **Paste or upload**. Upload this whole folder and choose **Analyze**. The detected Scheduled Service already includes Chromium, so you do not need to install a browser.
+Open Tokay and choose **Add code**, then **Paste or upload**. Upload this whole folder and choose **Analyze**. The detected Scheduled Job already includes Chromium, so you do not need to install a browser.
 
-Choose a Project. In **Schedule**, enter `every 6 hours` and check the upcoming runs in your timezone. Choose **Test & Schedule**, follow the deployment tracker, and choose **Go Live** if that action appears.
+Choose a Project. In the **Runs** field, enter `every 6 hours` and check the upcoming runs in your timezone. Choose **Test & schedule**, follow the deployment tracker, and choose **Go live** if that action appears.
 
 ## Push with Git
 
-Choose **Add code**, then **Git**. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Choose the detected Scheduled Service and a Project, set the six hour schedule, then choose **Test & Schedule**. Follow the deployment tracker and choose **Go Live** if that action appears.
+Choose **Add code**, then **Git**. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Choose **Configure service**, then a Project. Set the six hour schedule, then choose **Test & schedule**. Follow the deployment tracker and choose **Go live** if that action appears.
 
 ## Try it
 

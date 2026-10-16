@@ -1,6 +1,6 @@
 # PHP Laravel PostgreSQL event space booking
 
-An event space site lets visitors compare rooms, reserve a future time, and avoid conflicting bookings. Tokay runs the Laravel page as a Web Service and checks upcoming reminders with a Scheduled Service.
+An event space site lets visitors compare rooms, reserve a future time, and avoid conflicting bookings. Tokay runs the Laravel page as a Web Service and checks upcoming reminders with a Scheduled Job.
 
 This project has the shape of a real app with public requests and scheduled work over one PostgreSQL database. Tokay recognizes both entry points and lets them share the database and encrypted Laravel key inside one Project.
 
@@ -49,16 +49,16 @@ Never put either secret in this folder or in the deployed source.
 ## Paste or upload
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
-2. Upload this whole folder and choose **Analyze**. Tokay detects one Web Service in `web` and one Scheduled Service in `reminders`.
-3. Enter `every hour` in the reminder Service's **Schedule** field and check that the upcoming runs match your timezone.
-4. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
+2. Upload this whole folder and choose **Analyze**. Tokay detects one Web Service in `web` and one Scheduled Job in `reminders`.
+3. Enter `every hour` in the reminder Service's **Runs** field and check that the upcoming runs match your timezone.
+4. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
 
 ## Push with Git
 
 1. Choose **Add code**, then **Git**.
-2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder.
+2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Then choose **Configure service**.
 3. Set the reminder schedule to `every hour` and check the upcoming runs in your timezone.
-4. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
+4. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
 
 ## Finish setup in Tokay
 
@@ -66,7 +66,7 @@ On the Project page, choose **Environment**. Find the `APP_KEY` setup item, choo
 
 Next, open each Service's **Environment** page. Under **From your databases**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so each one receives the same Project resource and logical database.
 
-After saving `APP_KEY` and connecting both Services to the `app` database, continue the deployment and choose **Go Live** if prompted. When the Web Service is live, open the booking page from its URL.
+After saving `APP_KEY` and connecting both Services to the `app` database, continue the deployment and choose **Go live** if prompted. When the Web Service is live, open the booking page from its URL.
 
 ## Try it
 
@@ -78,7 +78,7 @@ After saving `APP_KEY` and connecting both Services to the `app` database, conti
 
 Set `ADMIN_PASSWORD` under **From your code** on the Web Service's **Environment** page, then deploy the Web Service again. Open `/admin/bookings` and enter the password to see upcoming names, rooms, and times.
 
-The Scheduled Service records reminders in its run history by default. To send real email, set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, and `SMTP_FROM` under **From your code** on its **Environment** page. Add a booking due within 24 hours, then choose **Run Now**.
+The Scheduled Job records reminders in its run history by default. To send real email, set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, and `SMTP_FROM` under **From your code** on its **Environment** page. Add a booking due within 24 hours, then choose **Run Now**.
 
 ## How it works
 
@@ -92,7 +92,7 @@ A database lock lets only one overlapping request win for a room and time. The r
 |---|---|---|
 | `APP_KEY` | Yes | Encrypts Laravel application values. Share one Project value with both Services. |
 | `ADMIN_PASSWORD` | No | Opens the staff booking list on the Web Service. |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM` | No | Sends real reminder email from the Scheduled Service. |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM` | No | Sends real reminder email from the Scheduled Job. |
 
 ## Grow from here
 
