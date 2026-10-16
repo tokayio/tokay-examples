@@ -40,14 +40,14 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this folder and choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Finish setup in Tokay
@@ -60,7 +60,7 @@ The task tracker needs PostgreSQL to save your work. Tokay has already prepared 
 4. Keep the suggested `app` name.
 5. Choose **Confirm**.
 
-The task tracker has everything it needs once its Service is connected to the `app` database. Tokay tests the committed database migration against a copy before the app receives traffic. Choose **Go Live** if prompted, then open the live URL to see the board.
+The task tracker has everything it needs once its Service is connected to the `app` database. Tokay tests the committed database migration against a copy before the app receives traffic. Choose **Go live** if prompted, then open the live URL to see the board.
 
 ## Try it
 

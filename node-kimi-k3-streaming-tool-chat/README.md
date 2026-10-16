@@ -42,21 +42,21 @@ If you want your agent to finish the setup, save your Moonshot key in their secr
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add your Moonshot key using the steps below.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add your Moonshot key using the steps below.
 
 ## Add your Kimi API key
 
 Create a key in the [Kimi API Platform](https://platform.kimi.ai/console/api-keys). On the Service page, open **Environment** and find `MOONSHOT_API_KEY` under **From your code**. Choose **Set value**, then paste and save your Kimi key. It stays encrypted.
 
-After saving the Kimi key, continue the deployment and choose **Go Live** if prompted. Open the chat from the live URL at the top of the Service.
+After saving the Kimi key, continue the deployment and choose **Go live** if prompted. Open the chat from the live URL at the top of the Service.
 
 ## Try it
 

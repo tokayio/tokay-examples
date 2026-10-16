@@ -40,16 +40,16 @@ Never put the Tokay API token in this folder or in either deployed Service.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**. Tokay detects a Web Service in `web` and a Background Worker in `worker`.
-3. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
+3. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
 4. Open each Service's **Environment** page and verify that both use the same managed Redis resource for `REDIS_URL`.
-5. Continue the deployment and choose **Go Live** if prompted.
+5. Continue the deployment and choose **Go live** if prompted.
 
 ## Push with Git
 
 1. Choose **Add code**, then **Git**.
-2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder.
-3. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
-4. Verify that both Services use the same managed Redis resource for `REDIS_URL`, then continue the deployment. Choose **Go Live** if prompted, then open the statement desk from the Web Service's live URL.
+2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Then choose **Configure service**.
+3. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
+4. Verify that both Services use the same managed Redis resource for `REDIS_URL`, then continue the deployment. Choose **Go live** if prompted, then open the statement desk from the Web Service's live URL.
 
 ## Try it
 
