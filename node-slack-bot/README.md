@@ -53,21 +53,21 @@ The Tokay token lets your agent deploy. The two Slack tokens let the running bot
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Background Worker. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Background Worker. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add both Slack tokens using the steps below.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Background Worker and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Add both Slack tokens using the steps below.
 
 ## Add the Slack tokens
 
 Open **Environment** and find `SLACK_BOT_TOKEN` and `SLACK_APP_TOKEN` under **From your code**. Choose **Set value** for each one, paste the matching token, and save it.
 
-After saving both Slack tokens, continue the deployment and choose **Go Live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
+After saving both Slack tokens, continue the deployment and choose **Go live** if prompted. The Background Worker has no public page, so open **Logs** to confirm that the bot connected.
 
 ## Try it
 

@@ -1,6 +1,6 @@
 # Python uptime monitor
 
-An uptime monitor checks one or more URLs, records status and latency, and alerts only when a site changes between up and down. Tokay runs the Python script as a Scheduled Service and preserves its SQLite history.
+An uptime monitor checks one or more URLs, records status and latency, and alerts only when a site changes between up and down. Tokay runs the Python script as a Scheduled Job and preserves its SQLite history.
 
 Start with Google and Example Domain to see two healthy checks before pointing it at your own service. The script exits after each pass, which keeps its schedule and failures easy to inspect.
 
@@ -37,17 +37,17 @@ Never put the Tokay API token in this folder or in the deployed Service.
 
 ## Paste or upload
 
-Open Tokay and choose **Add code**, then **Paste or upload**. Upload this whole folder and choose **Analyze**. Tokay detects one Scheduled Service. Choose a Project.
+Open Tokay and choose **Add code**, then **Paste or upload**. Upload this whole folder and choose **Analyze**. Tokay detects one Scheduled Job. Choose a Project.
 
-In **Schedule**, enter `every 5 minutes` and check the upcoming runs in your timezone. Choose **Test & Schedule**, follow the deployment tracker, and choose **Go Live** if that action appears.
+In the **Runs** field, enter `every 5 minutes` and check the upcoming runs in your timezone. Choose **Test & schedule**, follow the deployment tracker, and choose **Go live** if that action appears.
 
 ## Push with Git
 
-Choose **Add code**, then **Git**. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Choose the detected Scheduled Service and a Project, set the five minute schedule, then choose **Test & Schedule**. Follow the deployment tracker and choose **Go Live** if that action appears.
+Choose **Add code**, then **Git**. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Choose **Configure service**, then a Project. Set the five minute schedule, then choose **Test & schedule**. Follow the deployment tracker and choose **Go live** if that action appears.
 
 ## Try it
 
-1. Choose **Run Now** twice. `total_checks` in the second result counts both runs because the rows live in `uptime.sqlite3`, saved with the Service.
+1. Choose **Run now** twice. `total_checks` in the second result counts both runs because the rows live in `uptime.sqlite3`, saved with the Service.
 2. Deploy again and run one more check. The count continues from the same database.
 
 ## Watch your own site

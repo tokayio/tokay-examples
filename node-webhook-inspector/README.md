@@ -39,16 +39,16 @@ Never put the Tokay API token in this folder or in the deployed Function.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Function. Choose a Project, then choose **Deploy**.
-4. Continue the deployment and choose **Go Live** if prompted.
+3. Tokay detects one Function. Choose a Project, then choose **Go live**.
+4. Continue the deployment and choose **Go live** if prompted.
 5. When the Service status says **Live**, choose **Send test event**.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Function and a Project. Choose **Deploy**.
-4. Continue the deployment and choose **Go Live** if prompted.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
+4. Continue the deployment and choose **Go live** if prompted.
 5. When the Service status says **Live**, choose **Send test event**.
 
 ## Try it

@@ -60,9 +60,9 @@ Paste or upload is a quick way to try the prepared `v1` folder, but it cannot ca
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload the prepared `prisma-walkthrough` folder and choose **Analyze**.
-3. Review the detected Web Service, choose a Project, then choose **Deploy**.
+3. Review the detected Web Service, choose a Project, then choose **Go live**.
 4. On the Service page, open **Environment**. Find `DATABASE_URL` under **From your databases**, choose **Confirm database**, keep `app`, then choose **Confirm**.
-5. After connecting the Service to the `app` database, continue the deployment and choose **Go Live** if prompted.
+5. After connecting the Service to the `app` database, continue the deployment and choose **Go live** if prompted.
 
 ## Start the walkthrough with v1
 
@@ -74,9 +74,9 @@ Paste or upload is a quick way to try the prepared `v1` folder, but it cannot ca
 git push tokay main
 ```
 
-4. Choose the detected Web Service and a Project, then choose **Deploy**.
+4. Choose **Configure service**. Choose a Project, then choose **Go live**.
 5. Open the walkthrough Service's **Environment** page. Confirm the `app` database for `DATABASE_URL`.
-6. Continue the deployment and choose **Go Live** if prompted.
+6. Continue the deployment and choose **Go live** if prompted.
 
 ## Try it
 
