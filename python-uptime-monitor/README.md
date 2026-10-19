@@ -47,7 +47,7 @@ Choose **Add code**, then **Git**. Create a repository, follow the Git setup com
 
 ## Try it
 
-1. Choose **Run Now** twice. `total_checks` in the second result counts both runs because the rows live in `uptime.sqlite3`, saved with the Service.
+1. Choose **Run now** twice. `total_checks` in the second result counts both runs because the rows live in `uptime.sqlite3`, saved with the Service.
 2. Deploy again and run one more check. The count continues from the same database.
 
 ## Watch your own site

@@ -71,14 +71,14 @@ After saving `APP_KEY` and connecting both Services to the `app` database, conti
 ## Try it
 
 1. Book the **Workshop** room, then try to reserve an overlapping time. The second request is rejected.
-2. Open the reminder Service and choose **Run Now** twice. The first run records a due reminder and the second skips the duplicate.
+2. Open the reminder Service and choose **Run now** twice. The first run records a due reminder and the second skips the duplicate.
 3. Deploy again and return to the booking site. Your original reservation is still present.
 
 ## Turn on staff and email features
 
 Set `ADMIN_PASSWORD` under **From your code** on the Web Service's **Environment** page, then deploy the Web Service again. Open `/admin/bookings` and enter the password to see upcoming names, rooms, and times.
 
-The Scheduled Job records reminders in its run history by default. To send real email, set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, and `SMTP_FROM` under **From your code** on its **Environment** page. Add a booking due within 24 hours, then choose **Run Now**.
+The Scheduled Job records reminders in its run history by default. To send real email, set `SMTP_HOST`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`, and `SMTP_FROM` under **From your code** on its **Environment** page. Add a booking due within 24 hours, then choose **Run now**.
 
 ## How it works
 

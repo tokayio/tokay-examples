@@ -65,7 +65,7 @@ curl -X POST "$FUNCTION_URL/submit" \
 ```
 
 2. Send the same command again and confirm the response now reports a duplicate.
-3. Choose **Run Now** on the digest Service. Mira appears once under `priority` in the run result.
+3. Choose **Run now** on the digest Service. Mira appears once under `priority` in the run result.
 
 ## How it works
 

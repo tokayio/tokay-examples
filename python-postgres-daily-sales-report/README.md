@@ -55,7 +55,7 @@ Never put the Tokay API token in this folder or in either deployed Service.
 
 ## Try it
 
-1. Open the generator Service and choose **Run Now**.
+1. Open the generator Service and choose **Run now**.
 2. Refresh the viewer and open yesterday's report from **Report history**.
 3. Run the generator again. The same dated report gets a new generated time rather than a duplicate row.
 
