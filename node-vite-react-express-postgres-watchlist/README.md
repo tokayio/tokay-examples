@@ -42,21 +42,21 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Finish setup in Tokay
 
 The watchlist needs PostgreSQL to keep your recommendations. Open **Environment**, find `DATABASE_URL` under **From your databases**, and choose **Confirm database**. Keep `app`, then choose **Confirm**.
 
-Database setup for the watchlist is complete after its Service connects to `app`. Tokay tests the database migration against a copy before release. Choose **Go Live** if prompted. When the Service is live, open the watchlist from its URL.
+Database setup for the watchlist is complete after its Service connects to `app`. Tokay tests the database migration against a copy before release. Choose **Go live** if prompted. When the Service is live, open the watchlist from its URL.
 
 ## Try it
 

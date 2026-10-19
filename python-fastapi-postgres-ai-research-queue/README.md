@@ -40,18 +40,18 @@ If you want real model synthesis, save your Anthropic key in your agent's secret
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload this whole folder and choose **Analyze**. Tokay detects exactly one Web Service in `web` and one Background Worker in `worker`.
-3. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
+3. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
 4. Open each Service's **Environment** page. Under **From your databases**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the page and worker use the same jobs and checkpoints.
 5. Check that only the Web Service shows the Alembic migration. This keeps the database change from running twice.
-6. Continue the deployment and choose **Go Live** if prompted. When the Web Service is live, open the research queue from its URL.
+6. Continue the deployment and choose **Go live** if prompted. When the Web Service is live, open the research queue from its URL.
 
 ## Push with Git
 
 1. Choose **Add code**, then **Git**.
-2. Create a repository, follow the Git setup commands shown by Tokay, and push this whole folder.
-3. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
+2. Create a repository, follow the Git setup commands shown by Tokay, and push this whole folder. Then choose **Configure service**.
+3. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
 4. Confirm the `app` database on both Services and check that only the Web Service shows the Alembic migration.
-5. Continue the deployment and choose **Go Live** if prompted. Open the research queue from the Web Service's live URL.
+5. Continue the deployment and choose **Go live** if prompted. Open the research queue from the Web Service's live URL.
 
 ## Try it
 

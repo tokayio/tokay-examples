@@ -39,23 +39,23 @@ Never put the Tokay API token in this folder or in either deployed Service.
 ## Paste or upload
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
-2. Upload this whole folder and choose **Analyze**. Tokay detects a Web Service in `viewer` and a Scheduled Service in `generator`.
-3. Enter `every day at 8am` in the generator's **Schedule** field, then check the upcoming runs and timezone.
-4. Select both candidates, choose one Project, then choose **Deploy 2 Services**.
+2. Upload this whole folder and choose **Analyze**. Tokay detects a Web Service in `viewer` and a Scheduled Job in `generator`.
+3. Enter `every day at 8am` in the generator's **Runs** field, then check the upcoming runs and timezone.
+4. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
 5. Open each Service's **Environment** page. Under **From your databases**, find `DATABASE_URL`, choose **Confirm database**, keep `app`, then choose **Confirm**. Do this for both Services so the generator and viewer share the same reports.
-6. Check that only the viewer shows the Alembic migration, then continue the deployment and choose **Go Live** if prompted. When the viewer is live, open it from its URL.
+6. Check that only the viewer shows the Alembic migration, then continue the deployment and choose **Go live** if prompted. When the viewer is live, open it from its URL.
 
 ## Push with Git
 
 1. Choose **Add code**, then **Git**.
-2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder.
+2. Create a repository, follow the Git setup commands shown by Tokay, and push this folder. Then choose **Configure service**.
 3. Set the generator schedule to `every day at 8am` and check the upcoming runs in your timezone.
-4. Select both detected candidates, choose one Project, then choose **Deploy 2 Services**.
-5. Connect both Services to the `app` database, then continue the deployment. Choose **Go Live** if prompted, then open the viewer from its live URL.
+4. Both Services start included. Choose one Project, then choose **Go live with 2 services**.
+5. Connect both Services to the `app` database, then continue the deployment. Choose **Go live** if prompted, then open the viewer from its live URL.
 
 ## Try it
 
-1. Open the generator Service and choose **Run Now**.
+1. Open the generator Service and choose **Run now**.
 2. Refresh the viewer and open yesterday's report from **Report history**.
 3. Run the generator again. The same dated report gets a new generated time rather than a duplicate row.
 

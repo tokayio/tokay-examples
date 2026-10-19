@@ -39,14 +39,14 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload `index.php` and `.htaccess`, then choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Push with Git
 
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Create a repository and follow the Git setup commands shown by Tokay.
-3. Push this folder, then choose the detected Web Service and a Project. Choose **Deploy**.
+3. Push this folder, then choose **Configure service**. Choose a Project, then choose **Go live**.
 4. Tokay opens the new Service page. Complete the database step below so the deployment can continue.
 
 ## Finish setup in Tokay
@@ -59,7 +59,7 @@ The guestbook needs PostgreSQL to keep its messages. Tokay has already prepared 
 4. Keep the suggested `app` name.
 5. Choose **Confirm**.
 
-The guestbook is ready to deploy with `app` selected. Tokay creates the database and gives the private connection to the app. Choose **Go Live** if prompted, then open the guestbook from the Service's live URL.
+The guestbook is ready to deploy with `app` selected. Tokay creates the database and gives the private connection to the app. Choose **Go live** if prompted, then open the guestbook from the Service's live URL.
 
 ## Try it
 

@@ -38,8 +38,8 @@ Never put the Tokay API token in this folder or in the deployed app.
 
 1. Open Tokay and choose **Add code**, then **Paste or upload**.
 2. Upload `server.js` and `package.json`, then choose **Analyze**.
-3. Tokay detects one Web Service. Choose a Project, then choose **Deploy**.
-4. Continue the deployment and choose **Go Live** if prompted.
+3. Tokay detects one Web Service. Choose a Project, then choose **Go live**.
+4. Continue the deployment and choose **Go live** if prompted.
 5. When the Service status says **Live**, click the live URL in the top section to visit your guestbook.
 
 ## Push with Git
@@ -47,8 +47,8 @@ Never put the Tokay API token in this folder or in the deployed app.
 1. Open Tokay and choose **Add code**, then **Git**.
 2. Enter a repository name and choose **Create repository**.
 3. Follow the Git setup commands shown by Tokay, then push this folder.
-4. After Tokay analyzes the files, choose the detected Web Service and a Project. Choose **Deploy**.
-5. Continue the deployment and choose **Go Live** if prompted.
+4. After Tokay analyzes the files, choose **Configure service**. Choose a Project, then choose **Go live**.
+5. Continue the deployment and choose **Go live** if prompted.
 6. When the Service status says **Live**, click the live URL in the top section to visit your guestbook.
 
 ## Try it
