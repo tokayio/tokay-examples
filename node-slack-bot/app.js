@@ -3,7 +3,7 @@ const { App } = require("@slack/bolt");
 const botToken = process.env.SLACK_BOT_TOKEN?.trim();
 const appToken = process.env.SLACK_APP_TOKEN?.trim();
 if (!botToken || !appToken) {
-  console.error("SLACK_BOT_TOKEN and SLACK_APP_TOKEN are required. Add both Project Secrets before Go Live.");
+  console.error("SLACK_BOT_TOKEN and SLACK_APP_TOKEN are required. Add both Project Secrets before going live.");
   process.exit(1);
 }
 
