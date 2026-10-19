@@ -48,7 +48,7 @@ Choose **Add code**, then **Git**. Create a repository, follow the Git setup com
 
 ## Try it
 
-1. Choose **Run Now** and read the observed price in the run result. Ask your agent to download `last-price.png` if you want the screenshot.
+1. Choose **Run now** and read the observed price in the run result. Ask your agent to download `last-price.png` if you want the screenshot.
 2. Note the history count in the run result and deploy the same code again.
 3. Run it once more. The screenshot is refreshed and the count grows in the preserved database.
 
