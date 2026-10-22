@@ -45,7 +45,7 @@ const identityFrom = (request: Request): Identity | null => {
   const id = request.header("X-Tokay-Actor-Id")?.trim();
   const email = request.header("X-Tokay-Actor-Email")?.trim();
 
-  if ((type !== "user" && type !== "visitor") || !id || !email) return null;
+  if (type !== "person" || !id || !email) return null;
   return { id, email };
 };
 
