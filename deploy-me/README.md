@@ -17,22 +17,11 @@ Press **Sign the book** and your message appears at the top with its author and 
 
 Leave either field blank and the page asks you to fill in both without losing what you already typed.
 
-## Deploy with your agent
+## Deploy with your AI assistant
 
-If your client supports remote MCP, connect it to the
-[Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in,
-and ask your agent to deploy this folder without pasting a token. Otherwise,
-follow the API token steps below.
+[Connect your assistant to Tokay](https://tokay.io/getting-started/use-your-ai-assistant) once if you haven't yet. Then give it this folder or the example's GitHub URL, and ask it to deploy the guestbook and confirm the page opens.
 
-If your agent already has a Tokay API token, start at step 3.
-
-1. In Tokay, open **You**, then **API & MCP tokens**, and choose **New token**.
-2. Copy the token when it appears and save it in your agent's secret store.
-3. Give your agent this folder or the example's GitHub URL.
-4. Point your agent to [Tokay's agent instructions](https://app.tokay.io/llms.txt).
-5. Ask your agent to deploy the guestbook and confirm the page opens.
-
-Never put the Tokay API token in this folder or in the deployed app.
+Working from a script instead? Use the [Tokay API](https://tokay.io/docs/api) with [our agent instructions](https://app.tokay.io/llms.txt). Never put a Tokay token in this folder or in the deployed app.
 
 ## Paste or upload
 

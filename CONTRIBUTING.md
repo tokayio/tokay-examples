@@ -46,6 +46,29 @@ Read the full guide at https://tokay.io/examples/<slug>. You can also download t
 complete project at https://tokay.io/examples/downloads/<slug>.zip.
 ```
 
+Follow it with the deploy sections in this order. `## Deploy with your AI assistant`
+comes first, then `## Paste or upload` and `## Push with Git`. The site leaves these
+sections off the example page, so they serve readers on GitHub. The site generator
+names every heading it leaves out (`EXCLUDED_README_SECTIONS` in the website's
+`sitegen/examples-build.js`), so a new deploy heading needs a line there too. A
+walkthrough deployed in stages may name a section for its stage, as the Prisma
+walkthrough does with `## Paste or upload the first version`.
+
+The assistant section uses this wording, ending with the request that proves this
+example works.
+
+```md
+## Deploy with your AI assistant
+
+[Connect your assistant to Tokay](https://tokay.io/getting-started/use-your-ai-assistant) once if you haven't yet. Then give it this folder or the example's GitHub URL, and ask it to deploy the API and confirm that `/health` returns `{"ok":true}`.
+
+Working from a script instead? Use the [Tokay API](https://tokay.io/docs/api) with [our agent instructions](https://app.tokay.io/llms.txt). Never put a Tokay token in this folder or in the deployed app.
+```
+
+When the running app needs a key of yours, add a paragraph between the two that names
+it and says your assistant asks you for it. Never tell readers to hand an assistant a
+Tokay token.
+
 Keep workload specific setup, ways to try the app, failure behavior, secrets, and
 growth paths. Use `## Try it` for a short proof with two or three steps. Do not repeat
 the same behavior in the lede, `## What it does`, and `## Try it`.

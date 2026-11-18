@@ -1,6 +1,6 @@
 # Tokay examples
 
-Pick the example closest to what you want to deploy. Every folder is a complete, working app that you can give to an agent, upload, or push with Git.
+Pick the example closest to what you want to deploy. Every folder is a complete, working app that you can hand to your AI assistant, upload, or push with Git.
 
 Browse the full guides and downloads at [tokay.io/examples](https://tokay.io/examples) before you clone anything.
 
@@ -10,11 +10,11 @@ Each README tells you what the app needs, which choices to make in Tokay, and wh
 
 ## Deploy one
 
-### Tell your agent
+### Deploy with your AI assistant
 
-If your client supports remote MCP, connect it to the [Tokay MCP server](https://tokay.io/docs/platform-mcp), approve the browser sign in, and ask your agent to deploy the example folder and prove its main feature without pasting a token.
+[Connect your assistant to Tokay](https://tokay.io/getting-started/use-your-ai-assistant) once if you haven't yet. Then give it the example folder or its GitHub URL, and ask it to deploy the example and prove its main feature. Each example README says what to ask for.
 
-Otherwise, give your agent the example folder and [Tokay's agent instructions](https://app.tokay.io/llms.txt). To create a Tokay API token, open **You**, choose **API & MCP tokens**, then **New token**, and save the token in your agent's secret store. Never put this token in the example or the deployed app.
+Working from a script instead? Use the [Tokay API](https://tokay.io/docs/api) with [our agent instructions](https://app.tokay.io/llms.txt). Never put a Tokay token in the example or the deployed app.
 
 ### Paste or upload
 
