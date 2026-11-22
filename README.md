@@ -1,6 +1,6 @@
 # Tokay examples
 
-Pick the example closest to what you want to deploy. Every folder is a complete, working app that you can hand to your AI assistant, upload, or push with Git.
+Pick the example closest to what you want to deploy. Every folder is a complete, working app that you can hand to your AI assistant, deploy from GitHub, upload, or push with Git.
 
 Browse the full guides and downloads at [tokay.io/examples](https://tokay.io/examples) before you clone anything.
 
@@ -15,6 +15,10 @@ Each README tells you what the app needs, which choices to make in Tokay, and wh
 [Connect your assistant to Tokay](https://tokay.io/getting-started/use-your-ai-assistant) once if you haven't yet. Then give it the example folder or its GitHub URL, and ask it to deploy the example and prove its main feature. Each example README says what to ask for.
 
 Working from a script instead? Use the [Tokay API](https://tokay.io/docs/api) with [our agent instructions](https://app.tokay.io/llms.txt). Never put a Tokay token in the example or the deployed app.
+
+### Deploy from GitHub
+
+This repository holds every example, so copy the one you want into a repository of your own. Then open Tokay, choose **Add code**, then **GitHub**, and connect that repository. [Deploy from GitHub](https://tokay.io/docs/deploy-from-github) walks through the connection.
 
 ### Paste or upload
 
